@@ -26,17 +26,21 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"> 
    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.css" rel="stylesheet">
 
-
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Updock&display=swap" rel="stylesheet">
 
 
 </head>
 
 <body>
 
+
+
                 @yield('header')
                 @yield('video')
-                @yield('productos')
                 @yield('nosotros')
+                @yield('productos')
                 @yield('contacto')
                 @yield('ambiente')
                 @yield('footer')

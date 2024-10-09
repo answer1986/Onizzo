@@ -68,8 +68,8 @@ return [
     'terms_of_service' => 'Términos de Servicio',
     
      // Navigation
-     'productos' => 'Productos',
-     'nosotros' => 'Nosotros',
+     'products' => 'Productos',
+     'about os' => 'Nosotros',
      'medio_ambiente' => 'Medio Ambiente',
      'contacto' => 'Contacto',
     

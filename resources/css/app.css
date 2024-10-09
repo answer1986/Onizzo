@@ -162,24 +162,68 @@ seccion footer ***********
 /***************************
 seccion Contacto ***********
 ******************************************/
+#contacto-title{
+    font-family: "Updock", cursive;
+    font-weight: 400px;
+    font-style: normal;
+}
+
+#contact{
+    color:#000;
+}
+
 
 .contact-section {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     padding: 20px;
-    background-color: #F5F5F5;
+    background-image:url('http://localhost:8888/onizzo/public/image/frutilla.jpg');
+    color:white;
 }
 
-.left-column {
-    flex: 1;
-    margin-right: 20px;
+.card {
+    perspective: 1000px;
+    width: 300px;
+    height: 300px;
 }
 
-.right-column {
-    flex: 1;
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+}
+
+.card:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card-front {
     background-color: #D9EAD3;
-    padding: 20px;
-    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+}
+
+.card-back {
+    background-color: #F5F5F5;
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 form {
@@ -196,11 +240,6 @@ input, textarea {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    width: 500px;
-}
-
-#email{
-    margin-left:22px;
 }
 
 button {
@@ -211,7 +250,6 @@ button {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    width: 90px;
 }
 
 
@@ -225,9 +263,16 @@ seccion nosotros ***********
     padding: 20px;
     background-color: rgba(245, 245, 245, 0.8); /* Fondo translúcido */
     border-radius: 5px;
-    background-image: url('ruta-de-la-imagen-de-fondo.jpg'); /* Imagen de fondo */
+    background-image: url('http://localhost:8888/onizzo/public/image/viñedo.jpeg');
     background-size: cover;
     background-position: center;
+    opacity: 0,5;
+}
+
+#nosotros{
+  font-family: "Updock", cursive;
+  font-weight: 400px;
+  font-style: normal;
 }
 
 .text-column {
@@ -282,8 +327,8 @@ seccion productos ***********
 
 .slider-container {
     position: relative;
-    max-width: 1200px;
-    margin-top: 2%;
+    max-width: 100%;
+    margin-top: 0%;
     overflow: hidden;
 }
 
@@ -367,17 +412,11 @@ seccion productos ***********
 /***************************
 seccion video ***********
 ******************************************/
-.section .video-section{
-    height: 800px;
-}
 .video-section {
     position: relative;
-    width: 100%;
-    padding-top: 0%; /* Ajusta este porcentaje si necesitas más espacio en la sección */
+    width: 100vw; /* Ancho completo de la ventana */
+    height: 100vh; /* Altura completa de la ventana */
     overflow: hidden;
-    height: 90vh; /* 60% de la altura de la ventana */
-    overflow: hidden;
-
 }
 
 .video-container {
@@ -385,54 +424,46 @@ seccion video ***********
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%; /* 60% de la altura de la sección */
+    height: 100%;
 }
 
-.video-container iframe {
+.video-container video {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: cover; /* Escala el video para cubrir todo el contenedor */
 }
 
 .video-content {
     position: absolute;
-    bottom: 20px;
-    left: 20px;
+    bottom: 10%;
+    left: 5%;
     color: white;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-    z-index: 1; /* Asegúrate de que el texto esté sobre el video */
-    bottom: 350px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
 
 .video-content h2 {
-    font-size: 2.5rem;
+    font-size: 3vw;
     margin-bottom: 0.5rem;
 }
 
 .video-content p {
-    font-size: 1.2rem;
+    font-size: 1.5vw;
 }
 
-/* Ajustes responsivos */
 @media (max-width: 768px) {
-    .video-section {
-        padding-top: 60%; /* Aumenta la altura en pantallas más pequeñas */
-    }
     .video-content h2 {
-        font-size: 2rem;
+        font-size: 6vw;
     }
+    
     .video-content p {
-        font-size: 1rem;
+        font-size: 3vw;
     }
 }
+
 
 /***************************
 seccion ambiente ***********
 ******************************************/
-
-
-
-
 
 .ambiente-section {
     background-color: #f5f5f5;
@@ -445,23 +476,30 @@ seccion ambiente ***********
     margin: 0 auto;
 }
 
-.ambiente-section h2 {
+.ambiente-content h2 {
     color: #2c3e50;
     font-size: 2.5em;
+    text-align: center;
     margin-bottom: 20px;
 }
 
-.ambiente-section h3 {
+.sustainability-practices, .biodiversity, .certifications {
+    margin-top: 40px;
+}
+
+.sustainability-practices h3, .biodiversity h3, .certifications h3 {
     color: #27ae60;
     font-size: 1.8em;
-    margin-top: 30px;
-    margin-bottom: 15px;
+    border-bottom: 2px solid #27ae60;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 .ambiente-section p {
     color: #34495e;
     line-height: 1.6;
     margin-bottom: 15px;
+    text-align: justify;
 }
 
 .ambiente-section ul {
@@ -470,26 +508,28 @@ seccion ambiente ***********
 }
 
 .ambiente-section ul li {
+    display: flex;
+    align-items: center;
     color: #34495e;
-    margin-bottom: 10px;
-    padding-left: 20px;
+    margin-bottom: 15px;
+    padding-left: 40px;
     position: relative;
 }
 
-.ambiente-section ul li::before {
-    content: "•";
-    color: #27ae60;
-    font-size: 1.2em;
-    position: absolute;
-    left: 0;
-    top: 0;
+.ambiente-section ul li img {
+    width: 32px;
+    height: 32px;
+    margin-right: 15px;
 }
 
 @media (max-width: 768px) {
-    .ambiente-section h2 {
+    .ambiente-content h2 {
         font-size: 2em;
     }
-    .ambiente-section h3 {
+    .ambiente-content h3 {
         font-size: 1.5em;
+    }
+    .ambiente-section ul li {
+        padding-left: 10px;
     }
 }
