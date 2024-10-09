@@ -1,0 +1,535 @@
+.header {
+    background-color: #fff;
+    padding: 20px 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.header-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-logo img {
+    width: 200px;
+    height: auto;
+}
+
+.nav-menu ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-menu ul li {
+    margin-left: 40px;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.nav-menu a:hover {
+    color: #6A1B9A;
+}
+
+.language-flags {
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+}
+
+.language-flags a {
+    margin: 0 5px;
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+}
+
+.language-flags a.active,
+.language-flags a:hover {
+    opacity: 1;
+}
+
+.language-flags img {
+    width: 24px;
+    height: auto;
+    border-radius: 50%;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-menu ul {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    .nav-menu ul li {
+        margin: 10px 0;
+    }
+
+    .language-flags {
+        margin-top: 20px;
+    }
+}
+
+/***************************
+seccion footer ***********
+******************************************/
+.footer {
+    background-color: #f5f5f5;
+    padding: 40px 0;
+}
+
+.footer-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.footer-logo img {
+    width: 300px;
+    margin-right: 90px;
+}
+
+.footer-section, 
+.footer-section2 {
+    flex: 1 1 300px;
+    margin-bottom: 50px;
+}
+
+.footer-section h4, 
+.footer-section2 h4 {
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.footer-section a {
+    color: #000;
+    text-decoration: none;
+}
+
+/* Estilos ajustados para la sección de redes sociales */
+.footer-social {
+    flex-direction: column; /* Apilar el texto "Síguenos" y los iconos */
+    align-items: flex-start; /* Alinear el contenido al inicio */
+    gap: 10px; /* Espacio entre el texto y los iconos */
+}
+
+.footer-social-icons {
+    display: flex;
+    gap: 15px; /* Espacio entre los iconos */
+}
+
+.footer-social img {
+    width: 34px;
+}
+
+.footer-bottom {
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+    margin-top: 40px;
+}
+
+.footer-bottom p {
+    margin: 0;
+}
+
+
+/***************************
+seccion Contacto ***********
+******************************************/
+#contacto-title{
+    font-family: "Updock", cursive;
+    font-weight: 400px;
+    font-style: normal;
+}
+
+#contact{
+    color:#000;
+}
+
+
+.contact-section {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    background-image:url('http://localhost:8888/onizzo/public/image/frutilla.jpg');
+    color:white;
+}
+
+.card {
+    perspective: 1000px;
+    width: 300px;
+    height: 300px;
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+}
+
+.card:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card-front {
+    background-color: #D9EAD3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+}
+
+.card-back {
+    background-color: #F5F5F5;
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-top: 10px;
+}
+
+input, textarea {
+    margin-top: 5px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #8B5D5A;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+/***************************
+seccion nosotros ***********
+******************************************/
+
+.about-us-section {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: rgba(245, 245, 245, 0.8); /* Fondo translúcido */
+    border-radius: 5px;
+    background-image: url('http://localhost:8888/onizzo/public/image/viñedo.jpeg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0,5;
+}
+
+#nosotros{
+  font-family: "Updock", cursive;
+  font-weight: 400px;
+  font-style: normal;
+}
+
+.text-column {
+    flex: 1;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco translúcido para el texto */
+    border-radius: 5px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.text-column h3 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+
+.text-column p {
+    font-size: 1em;
+    line-height: 1.6;
+}
+
+.image-column {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel {
+    position: relative;
+    width: 100%;
+    max-width: 400px; /* Tamaño máximo del carrusel */
+    height: 300px;
+    overflow: hidden;
+    border-radius: 5px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-image {
+    width: 100%;
+    height: auto;
+    display: none;
+    border-radius: 5px;
+}
+
+.carousel-image.active {
+    display: block;
+}
+
+/***************************
+seccion productos ***********
+******************************************/
+
+.slider-container {
+    position: relative;
+    max-width: 100%;
+    margin-top: 0%;
+    overflow: hidden;
+}
+
+.main-slider {
+    position: relative;
+    height: 600px;
+}
+
+.slider-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.slider-item.active {
+    opacity: 1;
+}
+
+.slider-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slider-content {
+    position: absolute;
+    bottom: 50px;
+    left: 50px;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.thumbnail-slider {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.thumbnail-item {
+    width: 80px;
+    height: 50px;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.thumbnail-item.active {
+    opacity: 1;
+    border: 2px solid white;
+}
+
+.thumbnail-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slider-controls {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.control-btn {
+    background: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/***************************
+seccion video ***********
+******************************************/
+.video-section {
+    position: relative;
+    width: 100vw; /* Ancho completo de la ventana */
+    height: 100vh; /* Altura completa de la ventana */
+    overflow: hidden;
+}
+
+.video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Escala el video para cubrir todo el contenedor */
+}
+
+.video-content {
+    position: absolute;
+    bottom: 10%;
+    left: 5%;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.video-content h2 {
+    font-size: 3vw;
+    margin-bottom: 0.5rem;
+}
+
+.video-content p {
+    font-size: 1.5vw;
+}
+
+@media (max-width: 768px) {
+    .video-content h2 {
+        font-size: 6vw;
+    }
+    
+    .video-content p {
+        font-size: 3vw;
+    }
+}
+
+
+/***************************
+seccion ambiente ***********
+******************************************/
+
+.ambiente-section {
+    background-color: #f5f5f5;
+    padding: 50px 20px;
+    font-family: Arial, sans-serif;
+}
+
+.ambiente-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.ambiente-content h2 {
+    color: #2c3e50;
+    font-size: 2.5em;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.sustainability-practices, .biodiversity, .certifications {
+    margin-top: 40px;
+}
+
+.sustainability-practices h3, .biodiversity h3, .certifications h3 {
+    color: #27ae60;
+    font-size: 1.8em;
+    border-bottom: 2px solid #27ae60;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.ambiente-section p {
+    color: #34495e;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+.ambiente-section ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.ambiente-section ul li {
+    display: flex;
+    align-items: center;
+    color: #34495e;
+    margin-bottom: 15px;
+    padding-left: 40px;
+    position: relative;
+}
+
+.ambiente-section ul li img {
+    width: 32px;
+    height: 32px;
+    margin-right: 15px;
+}
+
+@media (max-width: 768px) {
+    .ambiente-content h2 {
+        font-size: 2em;
+    }
+    .ambiente-content h3 {
+        font-size: 1.5em;
+    }
+    .ambiente-section ul li {
+        padding-left: 10px;
+    }
+}
