@@ -41,8 +41,8 @@
                 @yield('video')
                 @yield('nosotros')
                 @yield('productos')
+                @yield('mercados')
                 @yield('contacto')
-                @yield('ambiente')
                 @yield('footer')
 
 <script>

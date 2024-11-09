@@ -19,7 +19,7 @@ return [
     
     // About us section
     'about_us' => 'About Us',
-    'about_us_description' => 'Frutas del Mundo S.A. is a leading company in the export of high-quality fruits and pulps, committed to bringing the best of local agriculture to tables around the world. Based in [city/country, e.g., Santiago, Chile], our mission is to connect authentic flavors and the rich biodiversity of our region with suppliers and businesses in the international market.',
+    'about_us_description' => 'SINCE 2001, AT ONIZZO WE ARE COMMITTED TO SUPPLYING OUR CUSTOMERS AROUND THE WORLD WITH THE HIGHEST QUALITY IN DRIED FRUITS, NUTS  AND FRESH FRUIT THAT CHILE CAN OFFER. THE OPTIMAL PHYTOSANITARY AND CLIMATE CONDITIONS OF OUR COUNTRY, TOGETHER WITH OUR ESTABLISHED AND SUCCESSFUL LINE OF PRODUCTS AND THE EXPERIENCE OF A DEDICATED TEAM, POSITION ONIZZO IN A PRIVILEGED PLACE AS A LEADER IN THIS INDUSTRY. OUR MAIN OBJECTIVE IS TO WORK WITH OUR CUSTOMERS AS TRUSTED PARTNERS, TO ENSURE THEY RECEIVE THE HIGHEST QUALITY FRUITS FOR THEIR MARKETS',
     
     // Contact section
     'contact_us' => 'Contact Us',
@@ -28,28 +28,8 @@ return [
     'send' => 'Send',
     
     // Environment section
-    'our_commitment' => 'Our Commitment to the Environment',
-    'sustainability' => 'Innovation and Sustainability',
-    'sustainability_description' => 'We are committed to innovation and sustainability. We use advanced technologies to continually improve our cultivation and manufacturing processes, reducing environmental impact and ensuring efficient use of resources. Our sustainable approach not only protects the environment but also ensures the long-term viability of our business and the well-being of the communities we work with.',
-    'sustainable_practices' => 'Sustainable Practices',
-    'agriculture_practices' => 'Regenerative Agriculture:',
-    'agriculture_practices_description' => 'We implement techniques that improve soil health, increase biodiversity, and capture carbon.',
-    'water_management' => 'Efficient Water Management:',
-    'water_management_description' => 'We use precision irrigation systems to optimize water use in our crops.',
-    'renewable_energy' => 'Renewable Energy:',
-    'renewable_energy_description' => 'Our processing facilities run on solar energy, reducing our carbon footprint.',
-    'eco_packaging' => 'Eco-Friendly Packaging:',
-    'eco_packaging_description' => 'We use biodegradable and recyclable materials in our packaging.',
-    'biodiversity_conservation' => 'Biodiversity Conservation',
-    'biodiversity_description' => 'We work closely with local organizations to protect and restore native ecosystems in the areas where we cultivate. This includes creating wildlife corridors and planting native species.',
-    
-    // Certifications
-    'certifications' => 'Certifications',
-    'certifications_description' => 'Our commitment to the environment is backed by international certifications, including:',
-    'organic_certification' => 'Organic Certification',
-    'fair_trade' => 'Fair Trade',
-    'rainforest_alliance' => 'Rainforest Alliance',
-    'iso_14001' => 'ISO 14001 (Environmental Management)',
+    'our_commitment' => 'Our reach covers major global markets',
+ 
     
     // Carousel images
     'carousel_image_1' => 'Dried Fruits',
@@ -72,4 +52,8 @@ return [
      'nosotros' => 'About Us',
      'medio_ambiente' => 'Environment',
      'contacto' => 'Contact',
+
+
+     //footer
+     'certificaciones'=>'Certifications'
 ];

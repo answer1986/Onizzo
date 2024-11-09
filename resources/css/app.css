@@ -14,7 +14,7 @@
 }
 
 .header-logo img {
-    width: 200px;
+    width: 300px;
     height: auto;
 }
 
@@ -462,7 +462,7 @@ seccion video ***********
 
 
 /***************************
-seccion ambiente ***********
+Despachp ***********
 ******************************************/
 
 .ambiente-section {
@@ -472,8 +472,8 @@ seccion ambiente ***********
 }
 
 .ambiente-content {
-    max-width: 800px;
-    margin: 0 auto;
+    max-width:1200px;
+    margin:2% ;
 }
 
 .ambiente-content h2 {
@@ -483,43 +483,8 @@ seccion ambiente ***********
     margin-bottom: 20px;
 }
 
-.sustainability-practices, .biodiversity, .certifications {
-    margin-top: 40px;
-}
-
-.sustainability-practices h3, .biodiversity h3, .certifications h3 {
-    color: #27ae60;
-    font-size: 1.8em;
-    border-bottom: 2px solid #27ae60;
-    padding-bottom: 10px;
-    margin-bottom: 20px;
-}
-
-.ambiente-section p {
-    color: #34495e;
-    line-height: 1.6;
-    margin-bottom: 15px;
-    text-align: justify;
-}
-
-.ambiente-section ul {
-    list-style-type: none;
-    padding-left: 0;
-}
-
-.ambiente-section ul li {
-    display: flex;
-    align-items: center;
-    color: #34495e;
-    margin-bottom: 15px;
-    padding-left: 40px;
-    position: relative;
-}
-
-.ambiente-section ul li img {
-    width: 32px;
-    height: 32px;
-    margin-right: 15px;
+.world{
+    width: 1200px;
 }
 
 @media (max-width: 768px) {

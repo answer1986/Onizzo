@@ -19,7 +19,7 @@ return [
     
     // Sección Sobre Nosotros
     'about_us' => 'Sobre Nosotros',
-    'about_us_description' => 'Frutas del Mundo S.A. es una empresa líder en la exportación de frutas y pulpas de alta calidad, comprometida con llevar lo mejor de la agricultura local a mesas de todo el mundo. Con sede en [ciudad/país, ej. Santiago, Chile], nuestra misión es conectar los sabores auténticos y la rica biodiversidad de nuestra región con proveedores y empresas en el mercado internacional.',
+    'about_us_description' => 'DESDE EL AÑO 2001, EN ONIZZO ESTAMOS COMPROMETIDOS CON SUMINISTRAR A NUESTROS CLIENTES ALREDEDOR DEL MUNDO LA MÁS ALTA CALIDAD EN FRUTOS SECOS, DESHIDRATADOS FRESCOS QUE CHILE PUEDE OFRECER. LAS ÓPTIMAS CONDICIONES FITOSANITARIAS Y CLIMÁTICAS DE NUESTRO PAÍS, JUNTO CON NUESTRA ESTABLECIDA Y EXITOSA LÍNEA DE PRODUCTOS Y LA EXPERIENCIA DE UN EQUIPO DEDICADO, POSICIONAN A ONIZZO EN UN LUGAR PRIVILEGIADO COMO LÍDER DE ESTA INDUSTRIA. NUESTRO PRINCIPAL OBJETIVO ES TRABAJAR CON NUESTROS CLIENTES COMO SOCIOS DE CONFIANZA, PARA ASEGURAR QUE RECIBAN LA MÁS ALTA CALIDAD DE FRUTA PARA SUS MERCADOS',
     
     // Sección de contacto
     'contact_us' => 'Contáctanos',
@@ -27,29 +27,12 @@ return [
     'message' => 'Tu mensaje:',
     'send' => 'Enviar',
     
-    // Sección de medio ambiente
-    'our_commitment' => 'Nuestro Compromiso con el Medio Ambiente',
-    'sustainability' => 'Innovación y Sostenibilidad',
-    'sustainability_description' => 'Estamos comprometidos con la innovación y la sostenibilidad. Utilizamos tecnologías avanzadas para mejorar continuamente nuestros procesos de cultivo y manufactura, reduciendo el impacto ambiental y asegurando un uso eficiente de los recursos. Nuestro enfoque sostenible no solo protege el medio ambiente, sino que también asegura la viabilidad a largo plazo de nuestro negocio y el bienestar de las comunidades con las que trabajamos.',
-    'sustainable_practices' => 'Prácticas Sostenibles',
-    'agriculture_practices' => 'Agricultura Regenerativa:',
-    'agriculture_practices_description' => 'Implementamos técnicas que mejoran la salud del suelo, aumentan la biodiversidad y capturan carbono.',
-    'water_management' => 'Gestión Eficiente del Agua:',
-    'water_management_description' => 'Utilizamos sistemas de riego de precisión para optimizar el uso del agua en nuestros cultivos.',
-    'renewable_energy' => 'Energía Renovable:',
-    'renewable_energy_description' => 'Nuestras instalaciones de procesamiento funcionan con energía solar, reduciendo nuestra huella de carbono.',
-    'eco_packaging' => 'Embalaje Ecológico:',
-    'eco_packaging_description' => 'Utilizamos materiales biodegradables y reciclables en nuestros envases y embalajes.',
-    'biodiversity_conservation' => 'Conservación de la Biodiversidad',
-    'biodiversity_description' => 'Trabajamos en estrecha colaboración con organizaciones locales para proteger y restaurar los ecosistemas nativos en las áreas donde cultivamos. Esto incluye la creación de corredores de vida silvestre y la plantación de especies autóctonas.',
-    
-    // Certificaciones
-    'certifications' => 'Certificaciones',
-    'certifications_description' => 'Nuestro compromiso con el medio ambiente está respaldado por certificaciones internacionales, incluyendo:',
-    'organic_certification' => 'Certificación Orgánica',
-    'fair_trade' => 'Comercio Justo',
-    'rainforest_alliance' => 'Alianza para Bosques',
-    'iso_14001' => 'ISO 14001 (Gestión Ambiental)',
+    // Sección Envio
+    'our_commitment' => 'Nuestro alcance abarca los principales mercados globales',
+    // world
+    'world'=> 'Mundo',
+
+
     
     // Imágenes del carrusel
     'carousel_image_1' => 'Frutas Secas',
@@ -73,4 +56,7 @@ return [
      'medio_ambiente' => 'Medio Ambiente',
      'contacto' => 'Contacto',
     
+     //footer
+     'Certifications'=>'certificaciones'
+
 ];

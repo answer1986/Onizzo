@@ -55,6 +55,12 @@
         <div class="thumbnail-item">
             <img src="{{ asset('./image/carrusel/agricultura.jpeg') }}" alt="{{ __('messages.slider_agriculture') }}">
         </div>
+        <div class="thumbnail-item">
+            <img src="{{ asset('./image/carrusel/camion.jpg') }}" alt="{{ __('messages.slider_camion') }}">
+        </div>
+        <div class="thumbnail-item">
+            <img src="{{ asset('./image/carrusel/barco.jpg') }}" alt="{{ __('messages.slider_barco') }}">
+        </div>
     </div>
     
     <div class="slider-controls">
@@ -82,71 +88,73 @@
 
 @section('contacto')
 <section class="contact-section">
-    <!-- Columna izquierda con información de sostenibilidad -->
-    <div class="left-column" id="ambiente">
-        <h2 id="contacto-title">{{ __('messages.sustainability') }}</h2>
-        <p>{{ __('messages.sustainability_description') }}</p>
+    <!-- Columna izquierda con logo y título de contacto -->
+    <div class="left-column" id="contact-info">
+        <!-- Logo de ONIZZO -->
+        <img src="{{ asset('image/Onizzo-logo.png') }}" alt="Logo ONIZZO" class="onizzo-logo">
+        
+        <!-- Título de la sección de contacto -->
+        <h2 id="contacto-title">{{ __('messages.contact_us') }}</h2>
+        
+        <!-- Datos de contacto -->
+        <div class="contact-details">
+            <p id="contacto"><strong>Agustín Marín Cobo:</strong> agustin@onizzo.com</p>
+            <p><strong>Claudia Marangunic:</strong> cmarangunic@onizzo.com</p>
+            <p><strong>Información general:</strong> info@onizzo.com</p>
+            <p><strong>Teléfono:</strong> +56 2 2927 0470</p>
+        </div>
     </div>
 
-    <!-- Columna derecha con la tarjeta de contacto que se voltea -->
+    <!-- Columna derecha con mapa y formulario de contacto -->
     <div class="right-column">
-        <div class="card">
+        <!-- Recuadro del mapa de Google -->
+        <div class="map-container">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3329.7186750980076!2d-70.6336576!3d-33.4182339!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662c58504fbc6d3%3A0x7e0c2b3451f6b911!2sAv.%20Pedro%20de%20Valdivia%20Nte.%20129%2C%20Providencia%2C%20Regi%C3%B3n%20Metropolitana%2C%20Chile!5e0!3m2!1ses!2scl!4v1619818624912!5m2!1ses!2scl" 
+                width="100%" 
+                height="300" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy">
+            </iframe>
+            <p >AVENIDA PEDRO DE VALDIVIA NORTE 0129 OF. 502, PROVIDENCIA – SANTIAGO – CHILE</p>
+        </div>
+        
+        <!-- Tarjeta de contacto con el formulario -->
+       <!--  <div class="card">
             <div class="card-inner">
-                <!-- Cara frontal de la tarjeta -->
                 <div class="card-front">
                     <h3>{{ __('messages.contact_us') }}</h3>
                     <p>Haz clic para contactarnos</p>
                 </div>
-                <!-- Cara trasera de la tarjeta con el formulario -->
-                <div class="card-back">
-                    <h3 id="contact">{{ __('messages.contact_us') }}</h3>
+               <div class="card-back">
+                    <h3>{{ __('messages.contact_us') }}</h3>
                     <form action="https://formspree.io/f/xnnaekdr" method="POST">
-                        <label id="contact">{{ __('messages.email') }}
+                        <label>{{ __('messages.email') }}
                             <input type="email" name="email" id="email" required>
                         </label>
-                        <label id="contact">{{ __('messages.message') }}
+                        <label>{{ __('messages.message') }}
                             <textarea name="message" required></textarea>
                         </label>
                         <button type="submit">{{ __('messages.send') }}</button>
                     </form>
                 </div>
             </div>
-        </div>
+        </div>-->
     </div>
 </section>
-
 @endsection
 
-@section('ambiente')
+
+@section('mercados')
 <section class="ambiente-section">
-    <div class="ambiente-content">
+    <div class="ambiente-content"  id="mercados">
         <h2>{{ __('messages.our_commitment') }}</h2>
-        <p>{{ __('messages.sustainability_description') }}</p>
         
-        <div class="sustainability-practices">
-            <h3>{{ __('messages.sustainable_practices') }}</h3>
-            <ul>
-                <li><img src="{{ asset('./image/icon/compost-2.png') }}" alt="Agricultura"><strong>{{ __('messages.agriculture_practices') }}</strong> {{ __('messages.agriculture_practices_description') }}</li>
-                <li><img src="{{ asset('./image/icon/agua.png') }}" alt="Agua"><strong>{{ __('messages.water_management') }}</strong> {{ __('messages.water_management_description') }}</li>
-                <li><img src="{{ asset('./image/icon/energia.png') }}" alt="Energía"><strong>{{ __('messages.renewable_energy') }}</strong> {{ __('messages.renewable_energy_description') }}</li>
-                <li><img src="{{ asset('./image/icon/empaque.png') }}" alt="Empaque"><strong>{{ __('messages.eco_packaging') }}</strong> {{ __('messages.eco_packaging_description') }}</li>
-            </ul>
-        </div>
+        <img src="{{ asset('./image/Mapa-Onizzo.png') }}" alt="{{ __('messages.world') }}" style="width:1800px" >
 
-        <div class="biodiversity">
-            <h3>{{ __('messages.biodiversity_conservation') }}</h3>
-            <p>{{ __('messages.biodiversity_description') }}</p>
-        </div>
-
-        <div class="certifications">
-            <h3>{{ __('messages.certifications') }}</h3>
-            <p>{{ __('messages.certifications_description') }}</p>
-            <ul>
-                <li><img src="/icons/organic.png" alt="Orgánico">{{ __('messages.organic_certification') }}</li>
-                <li><img src="/icons/fair_trade.png" alt="Fair Trade">{{ __('messages.fair_trade') }}</li>
-                <li><img src="/icons/rainforest.png" alt="Rainforest">{{ __('messages.rainforest_alliance') }}</li>
-                <li><img src="/icons/iso.png" alt="ISO">{{ __('messages.iso_14001') }}</li>
-            </ul>
+                
+            
         </div>
     </div>
 </section>
