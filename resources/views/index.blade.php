@@ -148,10 +148,10 @@
 
 @section('mercados')
 <section class="ambiente-section">
-    <div class="ambiente-content"  id="mercados">
+    <div class="ambiente-content"  id="mercados" style="margin-left:10px";>
         <h2>{{ __('messages.our_commitment') }}</h2>
         
-        <img src="{{ asset('./image/Mapa-Onizzo.png') }}" alt="{{ __('messages.world') }}" style="width:1800px" >
+        <img src="{{ asset('./image/Mapa-Onizzo.png') }}" alt="{{ __('messages.world') }}" style="width:100%" >
 
                 
             
