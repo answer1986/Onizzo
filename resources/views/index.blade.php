@@ -1,7 +1,7 @@
 @extends('layouts.all')
 @extends('essencials.header')
 
-@section('video')
+@section('video2')
 <section class="video-section">
 <div class="video-container" id="producto">
     <video autoplay muted loop playsinline style="width:100%;">
@@ -14,6 +14,29 @@
         <p>{{ __('messages.video_subtitle') }}</p>
     </div>
 </section>
+@endsection
+
+@section('video')
+<div class="container" id="productos-seccion1">
+        <div class="header">
+            <h1>Nuestros Productos</h1>
+        </div>
+        <div class="image-container">
+            <div class="image">
+                <img src="{{ asset('./image/productos/ciruelas.png') }}" alt="ciruelas">
+            </div>  
+            <div class="image">
+                <img src="{{ asset('./image/productos/ajos.png') }}"alt="ajos">
+            </div>
+            <div class="image">
+                <img src="{{ asset('./image/productos/guinda.png') }}" alt="guindas">
+            </div>
+            <div class="image">
+                <img src="{{ asset('./image/productos/nueces.png') }}" alt="nueces">
+            </div>
+        </div>
+    
+    </div>
 @endsection
 
 @section('productos')
