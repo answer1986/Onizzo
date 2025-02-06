@@ -2,7 +2,7 @@
 @extends('essencials.header')
 
 @section('video2')
-<section class="video-section">
+<!--<section class="video-section">
 <div class="video-container" id="producto">
     <video autoplay muted loop playsinline style="width:100%;">
         <source src="{{ asset('./video/chile.mp4') }}" type="video/mp4">
@@ -13,30 +13,48 @@
         <h2>{{ __('messages.video_title') }}</h2>
         <p>{{ __('messages.video_subtitle') }}</p>
     </div>
-</section>
+</section>-->
 @endsection
 
 @section('video')
 <div class="container" id="productos-seccion1">
-        <div class="header">
-            <h1>Nuestros Productos</h1>
-        </div>
+    <div class="header">
+        <h1>Nuestros Productos</h1>
+    </div>
+    <div class="content-wrapper">
         <div class="image-container">
             <div class="image">
                 <img src="{{ asset('./image/productos/ciruelas.png') }}" alt="ciruelas">
-            </div>  
+                <div class="text-overlay">
+                    <h3>Ciruelas</h3>
+                    <p>Descubre nuestra selección de ciruelas de la más alta calidad</p>
+                </div>
+            </div>
             <div class="image">
-                <img src="{{ asset('./image/productos/ajos.png') }}"alt="ajos">
+                <img src="{{ asset('./image/productos/ajos.png') }}" alt="ajos">
+                <div class="text-overlay">
+                    <h3>Ajos</h3>
+                    <p>Ajos frescos cultivados con los mejores estándares</p>
+                </div>
             </div>
             <div class="image">
                 <img src="{{ asset('./image/productos/guinda.png') }}" alt="guindas">
+                <div class="text-overlay">
+                    <h3>Guindas</h3>
+                    <p>Guindas seleccionadas para garantizar el mejor sabor</p>
+                </div>
             </div>
             <div class="image">
                 <img src="{{ asset('./image/productos/nueces.png') }}" alt="nueces">
+                <div class="text-overlay">
+                    <h3>Nueces</h3>
+                    <p>Nueces premium de la mejor calidad</p>
+                </div>
             </div>
         </div>
-    
+        <div class="product-description"></div>
     </div>
+</div>
 @endsection
 
 @section('productos')
@@ -45,7 +63,6 @@
         <div class="slider-item active">
             <img src="{{ asset('./image/carrusel/pasas-1.jpeg') }}" alt="{{ __('messages.slider_pasas') }}">
             <div class="slider-content">
-                <h2>{{ __('messages.slider_title') }}</h2>
                 <h3>{{ __('messages.slider_pasas') }}</h3>
                 <p>{{ __('messages.slider_pasas_description') }}</p>
             </div>
@@ -53,7 +70,6 @@
         <div class="slider-item">
             <img src="{{ asset('./image/carrusel/agro.png') }}" alt="{{ __('messages.slider_agro') }}">
             <div class="slider-content">
-                <h2>{{ __('messages.slider_title') }}</h2>
                 <h3>{{ __('messages.slider_agro') }}</h3>
                 <p>{{ __('messages.slider_agro_description') }}</p>
             </div>
@@ -61,9 +77,23 @@
         <div class="slider-item">
             <img src="{{ asset('./image/carrusel/agricultura.jpeg') }}" alt="{{ __('messages.slider_agriculture') }}">
             <div class="slider-content">
-                <h2>{{ __('messages.slider_title') }}</h2>
                 <h3>{{ __('messages.slider_agriculture') }}</h3>
                 <p>{{ __('messages.slider_agriculture_description') }}</p>
+            </div>
+        </div>
+        <!-- Agregando los slides faltantes -->
+        <div class="slider-item">
+            <img src="{{ asset('./image/carrusel/trucks.jpg') }}" alt="{{ __('messages.slider_camion') }}">
+            <div class="slider-content">
+                <h3>{{ __('messages.slider_camion') }}</h3>
+                <p>{{ __('messages.slider_camion_description') }}</p>
+            </div>
+        </div>
+        <div class="slider-item">
+            <img src="{{ asset('./image/carrusel/barco2.jpg') }}" alt="{{ __('messages.slider_barco') }}">
+            <div class="slider-content">
+                <h3>{{ __('messages.slider_barco') }}</h3>
+                <p>{{ __('messages.slider_barco_description') }}</p>
             </div>
         </div>
     </div>
@@ -104,6 +134,8 @@
             <img class="carousel-image" src="{{ asset('./image/frutas secas.jpeg') }}" alt="{{ __('messages.carousel_image_1') }}">
             <img class="carousel-image" src="{{ asset('./image/pasas.jpeg') }}" alt="{{ __('messages.carousel_image_2') }}">
             <img class="carousel-image" src="{{ asset('./image/ciruela.png') }}" alt="{{ __('messages.carousel_image_3') }}">
+            <img class="carousel-image" src="{{ asset('./image/Jefe.jpeg') }}" alt="{{ __('messages.carousel_image_4') }}">
+
         </div>
     </div>
 </section>
@@ -114,7 +146,7 @@
     <!-- Columna izquierda con logo y título de contacto -->
     <div class="left-column" id="contact-info">
         <!-- Logo de ONIZZO -->
-        <img src="{{ asset('image/Onizzo-logo.png') }}" alt="Logo ONIZZO" class="onizzo-logo">
+        <img src="{{ asset('image/Onizzo-logo.png') }}" alt="Logo ONIZZO" class="onizzo-logo2">
         
         <!-- Título de la sección de contacto -->
         <h2 id="contacto-title">{{ __('messages.contact_us') }}</h2>

@@ -4,7 +4,7 @@
         <div class="footer-content">
             <!-- Logo de la empresa -->
             <div class="footer-logo">
-                <img src="{{ asset('./image/onizzo-footer2.png') }}" alt="Logo Onizzo">
+                <img src="{{ asset('./image/Onizzo-header.png') }}" alt="Logo Onizzo">
             </div>
             
             <!-- Sección Nuestra Empresa -->

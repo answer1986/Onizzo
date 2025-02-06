@@ -109,7 +109,7 @@ seccion footer ***********
 }
 
 .footer-logo img {
-    width: 300px;
+    width: 250px;
     margin-right: 90px;
 }
 
@@ -180,8 +180,9 @@ seccion Contacto ***********
     color:#000;
 }
 
-.onizzo-logo{
-    height: 60px;
+.onizzo-logo2{
+    height: 120px;
+    width: 280px;
 }
 
 
@@ -293,8 +294,8 @@ seccion nosotros ***********
 .carousel {
     position: relative;
     width: 100%;
-    max-width: 400px; /* Tamaño máximo del carrusel */
-    height: 300px;
+    max-width: 665px; /* Tamaño máximo del carrusel */
+    height: 330px;
     overflow: hidden;
     border-radius: 5px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
@@ -517,6 +518,15 @@ seccion ambiente ***********
 /******************************
 seccion productos  ************
 *******************************/
+.container {
+    padding: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.content-wrapper {
+    position: relative;
+}
 
 .image-container {
     display: flex;
@@ -553,16 +563,71 @@ seccion productos  ************
 .image-container .image:not(:hover) img {
     opacity: 0.5;
 }
-/**/
 
+/* Estilos base para el texto */
+.text-overlay {
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.9);
+    padding: 1rem;
+    width: 250px;
+    text-align: center;
+    border-radius: 10px;
+    z-index: 100;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+/* Mostrar el texto al hacer hover */
+.image:hover .text-overlay {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.05);
+}
+
+/* Asegurar que el texto sea visible */
+.text-overlay h3 {
+    color: #000;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.text-overlay p {
+    font-size: 16px;
+    color: #000;
+    text-align: center;
+    margin-top: 5px;
+    padding: 5px 10px;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    max-width: 90%;
+    display: inline-block;
+}
+
+/* Ajuste para el último elemento */
+.image-container .image:last-child {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+/* Responsividad */
 @media (max-width: 768px) {
-    .ambiente-content h2 {
-        font-size: 2em;
+    .content-wrapper {
+        flex-direction: column;
     }
-    .ambiente-content h3 {
-        font-size: 1.5em;
+
+    .image-container {
+        flex-direction: column;
+        width: 100%;
+        height: auto;
     }
-    .ambiente-section ul li {
-        padding-left: 10px;
+
+    .image {
+        clip-path: none;
+        margin-bottom: 10px;
+    }
+
+    .text-overlay {
+        width: 80%;
     }
 }
