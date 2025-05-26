@@ -21,7 +21,7 @@
 <div class="plano-1">
     <div class="container" id="productos-seccion1">
         <div class="header">
-            <h1>Nuestros Productos</h1>
+            <h1>{{ __('messages.our_products') }}</h1>
         </div>
         <div class="content-wrapper">
             <div class="image-container">
@@ -189,8 +189,8 @@
             <div class="contact-details">
                 <p id="contacto"><strong>Agustín Marín Cobo:</strong> agustin@onizzo.com</p>
                 <p><strong>Claudia Marangunic:</strong> cmarangunic@onizzo.com</p>
-                <p><strong>Información general:</strong> info@onizzo.com</p>
-                <p><strong>Teléfono:</strong> +56 2 2927 0470</p>
+                <p><strong>{{ __('messages.general_info') }}:</strong> info@onizzo.com</p>
+                <p><strong>{{ __('messages.phone') }}:</strong> +56 2 2927 0470</p>
             </div>
         </div>
 
@@ -206,7 +206,7 @@
                     allowfullscreen="" 
                     loading="lazy">
                 </iframe>
-                <p >AVENIDA PEDRO DE VALDIVIA NORTE 0129 OF. 502, PROVIDENCIA – SANTIAGO – CHILE</p>
+                <p>{{ __('messages.address') }}</p>
             </div>
             
             <!-- Tarjeta de contacto con el formulario -->

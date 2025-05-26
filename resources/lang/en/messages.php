@@ -16,44 +16,50 @@ return [
     'slider_agro_description' => 'Innovation and sustainability in every aspect of our agricultural production.',
     'slider_agriculture' => 'Agriculture',
     'slider_agriculture_description' => 'Cultivating the future with responsible and high-quality agricultural practices.',
+    'slider_camion' => 'Transportation',
+    'slider_camion_description' => 'Efficient and responsible logistics to bring our products to the world.',
+    'slider_barco' => 'Export',
+    'slider_barco_description' => 'Connecting Chile with international markets through quality exports.',
     
     // About us section
     'about_us' => 'About Us',
-    'about_us_description' => 'SINCE 2001, AT ONIZZO WE ARE COMMITTED TO SUPPLYING OUR CUSTOMERS AROUND THE WORLD WITH THE HIGHEST QUALITY IN DRIED FRUITS, NUTS  AND FRESH FRUIT THAT CHILE CAN OFFER. THE OPTIMAL PHYTOSANITARY AND CLIMATE CONDITIONS OF OUR COUNTRY, TOGETHER WITH OUR ESTABLISHED AND SUCCESSFUL LINE OF PRODUCTS AND THE EXPERIENCE OF A DEDICATED TEAM, POSITION ONIZZO IN A PRIVILEGED PLACE AS A LEADER IN THIS INDUSTRY. OUR MAIN OBJECTIVE IS TO WORK WITH OUR CUSTOMERS AS TRUSTED PARTNERS, TO ENSURE THEY RECEIVE THE HIGHEST QUALITY FRUITS FOR THEIR MARKETS',
+    'about_us_description' => 'SINCE 2001, AT ONIZZO WE ARE COMMITTED TO SUPPLYING OUR CUSTOMERS AROUND THE WORLD WITH THE HIGHEST QUALITY IN DRIED FRUITS, NUTS AND FRESH FRUIT THAT CHILE CAN OFFER. THE OPTIMAL PHYTOSANITARY AND CLIMATE CONDITIONS OF OUR COUNTRY, TOGETHER WITH OUR ESTABLISHED AND SUCCESSFUL LINE OF PRODUCTS AND THE EXPERIENCE OF A DEDICATED TEAM, POSITION ONIZZO IN A PRIVILEGED PLACE AS A LEADER IN THIS INDUSTRY. OUR MAIN OBJECTIVE IS TO WORK WITH OUR CUSTOMERS AS TRUSTED PARTNERS, TO ENSURE THEY RECEIVE THE HIGHEST QUALITY FRUITS FOR THEIR MARKETS',
+    
+    // Products section
+    'our_products' => 'Our Products',
     
     // Contact section
     'contact_us' => 'Contact Us',
     'email' => 'Your email:',
     'message' => 'Your message:',
     'send' => 'Send',
+    'general_info' => 'General information',
+    'phone' => 'Phone',
+    'address' => 'PEDRO DE VALDIVIA NORTE AVENUE 0129 OF. 502, PROVIDENCIA – SANTIAGO – CHILE',
     
-    // Environment section
+    // Markets section
     'our_commitment' => 'Our reach covers major global markets',
- 
+    'world' => 'World',
     
     // Carousel images
     'carousel_image_1' => 'Dried Fruits',
     'carousel_image_2' => 'Raisins',
     'carousel_image_3' => 'Plums',
+    'carousel_image_4' => 'Chief',
 
     // Navigation
-    'products' => 'Products',
-    'about' => 'About',
-    'environment' => 'Environment',
-    'contact' => 'Contact',
+    'nosotros' => 'About Us',
+    'productos' => 'Products',
+    'mercados' => 'Markets',
+    'contacto' => 'Contact',
 
     // Footer
     'all_rights_reserved' => 'All rights reserved',
-    'privacy_policy' => 'Privacy Policy',
+    'privacy_policy' => 'Privacy and Policies',
     'terms_of_service' => 'Terms of Service',
-
-     // Navigation
-     'productos' => 'Products',
-     'nosotros' => 'About Us',
-     'medio_ambiente' => 'Environment',
-     'contacto' => 'Contact',
-
-
-     //footer
-     'certificaciones'=>'Certifications'
+    'certificaciones' => 'Certifications',
+    'our_company' => 'Our Company',
+    'contact' => 'Contact',
+    'mail' => 'Mail',
+    'development_by' => 'Development by R3Q',
 ];

@@ -9,20 +9,20 @@
             
             <!-- Sección Nuestra Empresa -->
             <div class="footer-section">
-                <h4>Nuestra empresa</h4>
-                <a href="#">Políticas y privacidad</a>
+                <h4>{{ __('messages.our_company') }}</h4>
+                <a href="#">{{ __('messages.privacy_policy') }}</a>
             </div>
 
             <!-- Sección Contacto -->
             <div class="footer-section2">
-                <h4>Contacto</h4>
-                <p>Mail: <a href="mailto:ventas@onizzo.com">ventas@onizzo.com</a></p>
-                <p>Teléfono: <a href="tel:22682 9200">562 2682 9200</a></p>
+                <h4>{{ __('messages.contact') }}</h4>
+                <p>{{ __('messages.mail') }}: <a href="mailto:ventas@onizzo.com">ventas@onizzo.com</a></p>
+                <p>{{ __('messages.phone') }}: <a href="tel:22682 9200">562 2682 9200</a></p>
             </div>
 
             <div class="footer-section footer-cert" id="cert">
                 <h4>{{ __('messages.certificaciones') }}</h4>
-                <img src="{{ asset('./image/icon/certificaciones.png') }}" id="cert1" alt="certificaciones"></a>
+                <img src="{{ asset('./image/icon/certificaciones.png') }}" id="cert1" alt="certificaciones">
             </div>
 
 
@@ -38,7 +38,7 @@
 
     <!-- Sección inferior -->
     <div class="footer-bottom">
-        <p>Desarrollo hecho por R3Q</p>
+        <p>{{ __('messages.development_by') }}</p>
     </div>
 </footer>
 
