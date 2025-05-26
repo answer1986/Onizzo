@@ -26,13 +26,12 @@
             </div>
 
 
-            <!-- Sección Síguenos -->
+            <!-- Sección Síguenos 
             <div class="footer-section footer-social" id="socials">
                 <h4>Síguenos</h4>
                 <a href="#"><img src="{{ asset('./image/insta.png') }}" alt="Instagram"></a>
                 <a href="#"><img src="{{ asset('./image/facebook.png') }}" alt="Facebook"></a>
-            </div>
-
+            </div>-->
             
         </div>
     </div>
