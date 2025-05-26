@@ -16,8 +16,14 @@
             <!-- Sección Contacto -->
             <div class="footer-section2">
                 <h4>{{ __('messages.contact') }}</h4>
-                <p>{{ __('messages.mail') }}: <a href="mailto:ventas@onizzo.com">ventas@onizzo.com</a></p>
-                <p>{{ __('messages.phone') }}: <a href="tel:22682 9200">562 2682 9200</a></p>
+                <div class="footer-contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>{{ __('messages.mail') }}: <a href="mailto:ventas@onizzo.com">ventas@onizzo.com</a></span>
+                </div>
+                <div class="footer-contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>{{ __('messages.phone') }}: <a href="tel:22682 9200">562 2682 9200</a></span>
+                </div>
             </div>
 
             <div class="footer-section footer-cert" id="cert">

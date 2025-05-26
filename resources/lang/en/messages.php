@@ -27,6 +27,20 @@ return [
     
     // Products section
     'our_products' => 'Our Products',
+    'dried_plums' => 'Dried Plums',
+    'dried_plums_desc' => 'Tenderized Pitted
+Tenderized With Pit
+Natural Condition
+American',
+    'fresh_garlic' => 'Fresh Garlic',
+    'fresh_garlic_desc' => 'Purple Chinese Type Garlic',
+    'fresh_cherries' => 'Fresh Cherries',
+    'fresh_cherries_desc' => 'Santina Variety
+Lapins Variety',
+    'walnuts' => 'Walnuts',
+    'walnuts_desc' => 'Chandler Variety
+With Shell
+Without Shell',
     
     // Contact section
     'contact_us' => 'Contact Us',
@@ -36,6 +50,8 @@ return [
     'general_info' => 'General information',
     'phone' => 'Phone',
     'address' => 'PEDRO DE VALDIVIA NORTE AVENUE 0129 OF. 502, PROVIDENCIA – SANTIAGO – CHILE',
+    'call_us' => 'Call us',
+    'send_email' => 'Send email',
     
     // Markets section
     'our_commitment' => 'Our reach covers major global markets',

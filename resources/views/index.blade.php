@@ -28,70 +28,58 @@
                 <div class="image">
                     <img src="{{ asset('./image/productos/ciruelas.png') }}" alt="ciruelas">
                     <div class="text-overlay">
-                        <h3>Ciruelas Deshidratadas</h3>
-                        <p>
-                            Tiernizadas Sin Carozo<br>
-                            Tiernizadas Con Carozo<br>
-                            Condición Natural<br>
-                            Americano
-                        </p>
+                        <h3>{{ __('messages.dried_plums') }}</h3>
+                        <p>{{ __('messages.dried_plums_desc') }}</p>
                     </div>
                 </div>
                 <div class="image">
                     <img src="{{ asset('./image/productos/ajos.png') }}" alt="ajos">
                     <div class="text-overlay">
-                        <h3>Ajos Frescos</h3>
-                        <p>
-                            Ajo Morado Tipo Chino
-                        </p>
+                        <h3>{{ __('messages.fresh_garlic') }}</h3>
+                        <p>{{ __('messages.fresh_garlic_desc') }}</p>
                     </div>
                 </div>
                 <div class="image">
                     <img src="{{ asset('./image/productos/guinda.png') }}" alt="guindas">
                     <div class="text-overlay">
-                        <h3>Cerezas Frescas</h3>
-                        <p>
-                            Variedad Santina<br>
-                            Variedad Lapins
-                        </p>
+                        <h3>{{ __('messages.fresh_cherries') }}</h3>
+                        <p>{{ __('messages.fresh_cherries_desc') }}</p>
                     </div>
                 </div>
                 <div class="image">
                     <img src="{{ asset('./image/productos/nueces.png') }}" alt="nueces">
                     <div class="text-overlay">
-                        <h3>Nueces</h3>
-                        <p>
-                            Variedad Chandler<br>
-                            Con Cáscara<br>
-                            Sin Cáscara
-                        </p>
+                        <h3>{{ __('messages.walnuts') }}</h3>
+                        <p>{{ __('messages.walnuts_desc') }}</p>
                     </div>
                 </div>
             </div>
             <div class="product-description"></div>
         </div>
     </div>
+    
+    <!-- Sobre Nosotros en PLANO 1 -->
+    <section class="about-us-section">
+        <div class="text-column">
+            <h3 id="nosotros">{{ __('messages.about_us') }}</h3>
+            <p>{{ __('messages.about_us_description') }}</p>
+        </div>
+        <div class="image-column">
+            <div class="carousel">
+                <img class="carousel-image active" src="{{ asset('./image/frutas secas.jpeg') }}" alt="{{ __('messages.carousel_image_1') }}">
+                <img class="carousel-image" src="{{ asset('./image/pasas.jpeg') }}" alt="{{ __('messages.carousel_image_2') }}">
+                <img class="carousel-image" src="{{ asset('./image/ciruela.png') }}" alt="{{ __('messages.carousel_image_3') }}">
+                <img class="carousel-image" src="{{ asset('./image/Jefe.jpeg') }}" alt="{{ __('messages.carousel_image_4') }}">
+            </div>
+        </div>
+    </section>
 </div>
 @endsection
 
 @section('nosotros')
-<section class="about-us-section">
-    <div class="text-column">
-        <h3 id="nosotros">{{ __('messages.about_us') }}</h3>
-        <p>{{ __('messages.about_us_description') }}</p>
-    </div>
-    <div class="image-column">
-        <div class="carousel">
-            <img class="carousel-image active" src="{{ asset('./image/frutas secas.jpeg') }}" alt="{{ __('messages.carousel_image_1') }}">
-            <img class="carousel-image" src="{{ asset('./image/pasas.jpeg') }}" alt="{{ __('messages.carousel_image_2') }}">
-            <img class="carousel-image" src="{{ asset('./image/ciruela.png') }}" alt="{{ __('messages.carousel_image_3') }}">
-            <img class="carousel-image" src="{{ asset('./image/Jefe.jpeg') }}" alt="{{ __('messages.carousel_image_4') }}">
-        </div>
-    </div>
-</section>
 @endsection
 
-<!-- PLANO 2: Sliders -->
+<!-- PLANO 2: Sobre Nosotros (continuación) + Sliders -->
 @section('productos')
 <div class="plano-2">
     <div class="slider-container">
@@ -187,10 +175,61 @@
             
             <!-- Datos de contacto -->
             <div class="contact-details">
-                <p id="contacto"><strong>Agustín Marín Cobo:</strong> agustin@onizzo.com</p>
-                <p><strong>Claudia Marangunic:</strong> cmarangunic@onizzo.com</p>
-                <p><strong>{{ __('messages.general_info') }}:</strong> info@onizzo.com</p>
-                <p><strong>{{ __('messages.phone') }}:</strong> +56 2 2927 0470</p>
+                <div class="contact-item">
+                    <div class="contact-info">
+                        <i class="fas fa-envelope contact-icon"></i>
+                        <div class="contact-text">
+                            <strong>Agustín Marín Cobo:</strong>
+                            <span>agustin@onizzo.com</span>
+                        </div>
+                    </div>
+                    <a href="mailto:agustin@onizzo.com" class="contact-action">
+                        <i class="fas fa-paper-plane"></i>
+                        {{ __('messages.send_email') }}
+                    </a>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-info">
+                        <i class="fas fa-envelope contact-icon"></i>
+                        <div class="contact-text">
+                            <strong>Claudia Marangunic:</strong>
+                            <span>cmarangunic@onizzo.com</span>
+                        </div>
+                    </div>
+                    <a href="mailto:cmarangunic@onizzo.com" class="contact-action">
+                        <i class="fas fa-paper-plane"></i>
+                        {{ __('messages.send_email') }}
+                    </a>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-info">
+                        <i class="fas fa-envelope contact-icon"></i>
+                        <div class="contact-text">
+                            <strong>{{ __('messages.general_info') }}:</strong>
+                            <span>info@onizzo.com</span>
+                        </div>
+                    </div>
+                    <a href="mailto:info@onizzo.com" class="contact-action">
+                        <i class="fas fa-paper-plane"></i>
+                        {{ __('messages.send_email') }}
+                    </a>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-info">
+                        <i class="fas fa-phone contact-icon"></i>
+                        <div class="contact-text">
+                            <strong>{{ __('messages.phone') }}:</strong>
+                            <span>+56 2 2927 0470</span>
+                        </div>
+                    </div>
+                    <a href="tel:+56229270470" class="contact-action">
+                        <i class="fas fa-phone-alt"></i>
+                        {{ __('messages.call_us') }}
+                    </a>
+                </div>
             </div>
         </div>
 

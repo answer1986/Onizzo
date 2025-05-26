@@ -27,6 +27,20 @@ return [
     
     // Sección de productos
     'our_products' => 'Nuestros Productos',
+    'dried_plums' => 'Ciruelas Deshidratadas',
+    'dried_plums_desc' => 'Tiernizadas Sin Carozo
+Tiernizadas Con Carozo
+Condición Natural
+Americano',
+    'fresh_garlic' => 'Ajos Frescos',
+    'fresh_garlic_desc' => 'Ajo Morado Tipo Chino',
+    'fresh_cherries' => 'Cerezas Frescas',
+    'fresh_cherries_desc' => 'Variedad Santina
+Variedad Lapins',
+    'walnuts' => 'Nueces',
+    'walnuts_desc' => 'Variedad Chandler
+Con Cáscara
+Sin Cáscara',
     
     // Sección de contacto
     'contact_us' => 'Contáctanos',
@@ -36,6 +50,8 @@ return [
     'general_info' => 'Información general',
     'phone' => 'Teléfono',
     'address' => 'AVENIDA PEDRO DE VALDIVIA NORTE 0129 OF. 502, PROVIDENCIA – SANTIAGO – CHILE',
+    'call_us' => 'Llamar',
+    'send_email' => 'Enviar correo',
     
     // Sección Mercados
     'our_commitment' => 'Nuestro alcance abarca los principales mercados globales',
