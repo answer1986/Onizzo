@@ -164,7 +164,7 @@
 <!-- PLANO 4: Contacto + Footer -->
 @section('contacto')
 <div class="plano-4">
-    <section class="contact-section">
+    <section class="contact-section" id="contacto">
         <!-- Columna izquierda con logo y título de contacto -->
         <div class="left-column" id="contact-info">
             <!-- Logo de ONIZZO -->

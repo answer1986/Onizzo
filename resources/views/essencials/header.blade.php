@@ -8,8 +8,8 @@
         </div>
         <nav class="nav-menu">
             <ul>
-                <li><a href="#nosotros">{{ __('messages.nosotros') }}</a></li>
                 <li><a href="#producto">{{ __('messages.productos') }}</a></li>
+                <li><a href="#nosotros">{{ __('messages.nosotros') }}</a></li>
                 <li><a href="#mercados">{{ __('messages.mercados') }}</a></li>
                 <li><a href="#contacto">{{ __('messages.contacto') }}</a></li>
                 <li class="language-switch">
