@@ -27,20 +27,20 @@ return [
     
     // Products section
     'our_products' => 'Our Products',
-    'dried_plums' => 'Dried Plums',
+    'dried_plums' => 'Prunes',
     'dried_plums_desc' => 'Tenderized Pitted
-Tenderized With Pit
+Tenderized Unpitted
 Natural Condition
 American',
     'fresh_garlic' => 'Fresh Garlic',
-    'fresh_garlic_desc' => 'Purple Chinese Type Garlic',
+    'fresh_garlic_desc' => 'Purple Garlic Chinese Type',
     'fresh_cherries' => 'Fresh Cherries',
     'fresh_cherries_desc' => 'Santina Variety
 Lapins Variety',
     'walnuts' => 'Walnuts',
     'walnuts_desc' => 'Chandler Variety
-With Shell
-Without Shell',
+Inshell
+Shelled',
     
     // Contact section
     'contact_us' => 'Contact Us',
