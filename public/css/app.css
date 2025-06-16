@@ -392,7 +392,7 @@ body {
 /* Sistema de escalado automático simple */
 
 /* Elementos principales que se escalan automáticamente */
-.plano-1, .plano-3, .plano-4 {
+.plano-1, .plano-3 {
     min-height: clamp(60vh, 80vh, 90vh);
     width: clamp(90vw, 95vw, 98vw);
     margin: clamp(0.5rem, 2vw, 3rem) auto;
@@ -401,6 +401,13 @@ body {
 
 .plano-2 {
     min-height: clamp(40vh, 80vh, 50vh);
+    width: clamp(90vw, 95vw, 98vw);
+    margin: clamp(0.5rem, 1vw, 1rem) auto;
+    padding: clamp(0.5rem, 0.5vw, 1rem);
+}
+
+.plano-4 {
+    min-height: clamp(40vh, 60vh, 50vh);
     width: clamp(90vw, 95vw, 98vw);
     margin: clamp(0.5rem, 1vw, 1rem) auto;
     padding: clamp(0.5rem, 0.5vw, 1rem);
@@ -669,7 +676,7 @@ body {
 
 #contacto-title{
     font-family: "arial", cursive;
-    font-weight: 400px;
+    font-weight: clamp(1rem, 4vw, 2rem);
     font-style: normal;
 }
 
@@ -686,7 +693,7 @@ body {
 .contact-details {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 1rem;
 }
 
 .contact-item {
@@ -729,7 +736,6 @@ body {
 .contact-text {
     display: flex;
     flex-direction: column;
-    gap: 0.25rem;
 }
 
 .contact-text strong {
@@ -1030,7 +1036,7 @@ body {
   text-align: center;
   color: #fff;
   margin-bottom: clamp(1rem, 2vw, 2rem);
-  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  font-size: 1.5rem;
   text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
   padding-top: 0.2%;
 }
