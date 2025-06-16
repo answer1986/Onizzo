@@ -426,7 +426,7 @@ body {
 }
 
 .header-logo img {
-    width: clamp(190px, 25vw, 290px);
+    width: clamp(190px, 20vw, 290px);
     height: auto;
 }
 
@@ -447,7 +447,7 @@ body {
 .text-column {
     padding: clamp(0.5rem, 1.5vw, 1rem);
     margin-right: clamp(1rem, 3vw, 3rem);
-    font-size: clamp(0.8rem, 1vw, 1rem);
+    font-size: clamp(0.6rem, 1vw, 0.8rem);
 }
 
 .text-column h3 {
