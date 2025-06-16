@@ -395,7 +395,7 @@ body {
     min-height: clamp(60vh, 80vh, 90vh);
     width: clamp(90vw, 95vw, 98vw);
     margin: clamp(0.5rem, 2vw, 3rem) auto;
-    padding: clamp(1rem, 0.5vw, 4rem);
+    padding: clamp(1rem, 0.5vw, 2rem);
 }
 
 .container {
@@ -569,7 +569,7 @@ body {
 
 .footer-logo img {
     width: clamp(100px, 20vw, 250px);
-    margin-right: clamp(2rem, 6vw, 9rem);
+    margin-right: clamp(2rem, 6vw, 7rem);
 }
 
 .footer-section, 
