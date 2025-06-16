@@ -156,7 +156,7 @@
         
         <svg class="mapa-mundial" viewBox="0 0 2754 1398" xmlns="http://www.w3.org/2000/svg">
           <!-- Cargar el mapa desde el archivo SVG externo -->
-          <image href="{{ asset('./image/BlankMap-World.svg') }}" width="2754" height="1398" />
+          <image href="{{ asset('image/BlankMap-World.svg') }}" width="2754" height="1398" />
           
           <!-- Círculos superpuestos para países seleccionados con coordenadas CORREGIDAS -->
           
@@ -202,95 +202,95 @@
           </circle>
           
           <!-- México -->
-          <circle class="circulo-pais" cx="560" cy="530" r="9" data-pais="México">
+          <circle class="circulo-pais" cx="560" cy="530" r="14" data-pais="México">
             <title>México</title>
           </circle>
           
           <!-- Estados Unidos (zona sur) -->
-          <circle class="circulo-pais" cx="670" cy="380" r="9" data-pais="Estados Unidos">
+          <circle class="circulo-pais" cx="670" cy="380" r="14" data-pais="Estados Unidos">
             <title>Estados Unidos</title>
           </circle>
           
           <!-- EUROPA Y MEDIO ORIENTE -->
           <!-- España -->
-          <circle class="circulo-pais" cx="1300" cy="330" r="9" data-pais="España">
+          <circle class="circulo-pais" cx="1300" cy="330" r="14" data-pais="España">
             <title>España</title>
           </circle>
           
           <!-- Francia -->
-          <circle class="circulo-pais" cx="1340" cy="320" r="9" data-pais="Francia">
+          <circle class="circulo-pais" cx="1340" cy="320" r="14" data-pais="Francia">
             <title>Francia</title>
           </circle>
           
           <!-- Italia -->
-          <circle class="circulo-pais" cx="1400" cy="330" r="9" data-pais="Italia">
+          <circle class="circulo-pais" cx="1400" cy="330" r="14" data-pais="Italia">
             <title>Italia</title>
           </circle>
           
           <!-- Alemania -->
-          <circle class="circulo-pais" cx="1380" cy="280" r="9" data-pais="Alemania">
+          <circle class="circulo-pais" cx="1380" cy="280" r="14" data-pais="Alemania">
             <title>Alemania</title>
           </circle>
           
           <!-- Suiza -->
-          <circle class="circulo-pais" cx="1400" cy="190" r="9" data-pais="Suiza">
+          <circle class="circulo-pais" cx="1400" cy="190" r="14" data-pais="Suiza">
             <title>Suiza</title>
           </circle>
           
           <!-- Países Bajos -->
-          <circle class="circulo-pais" cx="1350" cy="270" r="9" data-pais="Países Bajos">
+          <circle class="circulo-pais" cx="1350" cy="270" r="14" data-pais="Países Bajos">
             <title>Países Bajos</title>
           </circle>
          
           <!-- Reino Unido -->
-          <circle class="circulo-pais" cx="1300" cy="260" r="9" data-pais="Reino Unido">
+          <circle class="circulo-pais" cx="1300" cy="260" r="14" data-pais="Reino Unido">
             <title>Reino Unido</title>
           </circle>
           
           <!-- Turquía -->
-          <circle class="circulo-pais" cx="1550" cy="370" r="9" data-pais="Turquía">
+          <circle class="circulo-pais" cx="1550" cy="370" r="14" data-pais="Turquía">
             <title>Turquía</title>
           </circle>
           
           <!-- Grecia -->
-          <circle class="circulo-pais" cx="1450" cy="360" r="9" data-pais="Grecia">
+          <circle class="circulo-pais" cx="1450" cy="360" r="14" data-pais="Grecia">
             <title>Grecia</title>
           </circle>
           
           <!-- Túnez -->
-          <circle class="circulo-pais" cx="1380" cy="420" r="9" data-pais="Túnez">
+          <circle class="circulo-pais" cx="1380" cy="420" r="14" data-pais="Túnez">
             <title>Túnez</title>
           </circle>
           
           <!-- ASIA Y OCEANÍA -->
           <!-- India -->
-          <circle class="circulo-pais" cx="1900" cy="600" r="9" data-pais="India">
+          <circle class="circulo-pais" cx="1900" cy="600" r="14" data-pais="India">
             <title>India</title>
           </circle>
           
           <!-- China -->
-          <circle class="circulo-pais" cx="2100" cy="450" r="9" data-pais="China">
+          <circle class="circulo-pais" cx="2100" cy="450" r="14" data-pais="China">
             <title>China</title>
           </circle>
           
           <!-- Vietnam -->
-          <circle class="circulo-pais" cx="2110" cy="570" r="9" data-pais="Vietnam">
+          <circle class="circulo-pais" cx="2110" cy="570" r="14" data-pais="Vietnam">
             <title>Vietnam</title>
           </circle>
           
           <!-- Corea del Sur -->
-          <circle class="circulo-pais" cx="2220" cy="380" r="9" data-pais="Corea del Sur">
+          <circle class="circulo-pais" cx="2220" cy="380" r="14" data-pais="Corea del Sur">
             <title>Corea del Sur</title>
           </circle>
           
           <!-- Australia -->
-          <circle class="circulo-pais" cx="2300" cy="900" r="9" data-pais="Australia">
+          <circle class="circulo-pais" cx="2300" cy="900" r="14" data-pais="Australia">
             <title>Australia</title>
           </circle>
           
           <!-- ÁFRICA -->
           <!-- Sudáfrica -->
-          <circle class="circulo-pais" cx="1520" cy="900" r="9" data-pais="Sudáfrica">
+          <circle class="circulo-pais" cx="1520" cy="900" r="14" data-pais="Sudáfrica">
             <title>Sudáfrica</title>
           </circle>
           
