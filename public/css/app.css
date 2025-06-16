@@ -572,9 +572,10 @@ body {
     margin-right: clamp(2rem, 6vw, 7rem);
 }
 
-.footer-section, 
+.footer-section,
 .footer-section2 {
-    flex: 1 1 300px;
+    flex: 1 1 300px;  /* base de 300px, puede crecer o encoger */
+    min-width: 150px; /* no se reducirá más de 250px */
     margin-bottom: 50px;
 }
 
