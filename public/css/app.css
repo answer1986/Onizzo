@@ -667,7 +667,7 @@ body {
 }
 
 .onizzo-logo2{
-    height: 20%;
+    height: 25%;
     width: 30%;
 }
 
@@ -700,7 +700,7 @@ body {
 .contact-info {
     display: flex;
     align-items: center;
-    gap: 0.8rem;
+    gap: 2%;
     flex: 1;
 }
 
