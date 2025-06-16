@@ -393,7 +393,8 @@ body {
 
 
 .plano-1 {
-    padding: 2%;
+    padding-bottom: 0px !important;
+
 }
 
 /* Elementos principales que se escalan automáticamente */
@@ -437,9 +438,10 @@ body {
 }
 
 .about-us-section {
-    margin: clamp(1rem, 3vw, 3rem);
-    padding: clamp(1rem, 2vw, 2rem);
+    margin: clamp(1rem, 0vw, 3rem);
+    padding: clamp(1rem, 0vw, 2rem);
     flex-direction: row;
+    margin-bottom: 1%;
 }
 
 .text-column {
