@@ -135,11 +135,11 @@ body {
     min-height: 80vh;
     background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
     box-shadow: 0 16px 64px rgba(0,0,0,0.12), 0 8px 32px rgba(0,0,0,0.08);
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 3rem;
+    padding: 1rem;
     border-radius: 24px;
     border: 1px solid rgba(255,255,255,0.5);
 }
@@ -282,7 +282,7 @@ body {
 
 /* PLANO 3: Mapa de mercados */
 .plano-3 {
-    min-height: 80vh;
+    min-height: 70%;
     background: linear-gradient(135deg, #DAC2FE 0%, #c8b5f7 100%);
     box-shadow: 0 20px 80px rgba(0,0,0,0.15), 0 8px 32px rgba(0,0,0,0.1);
     margin-bottom: 3rem;
@@ -292,6 +292,7 @@ body {
     padding: 5rem 3rem;
     border-radius: 24px;
     border: 2px solid rgba(255,255,255,0.3);
+    margin-left: 5%;
 }
 
 .ambiente-section {
@@ -391,11 +392,18 @@ body {
 /* Sistema de escalado automático simple */
 
 /* Elementos principales que se escalan automáticamente */
-.plano-1, .plano-2, .plano-3, .plano-4 {
+.plano-1, .plano-3, .plano-4 {
     min-height: clamp(60vh, 80vh, 90vh);
     width: clamp(90vw, 95vw, 98vw);
     margin: clamp(0.5rem, 2vw, 3rem) auto;
-    padding: clamp(1rem, 0.5vw, 2rem);
+    padding: clamp(¿rem, 0.5vw, 2rem);
+}
+
+.plano-2 {
+    min-height: clamp(40vh, 80vh, 50vh);
+    width: clamp(90vw, 95vw, 98vw);
+    margin: clamp(0.5rem, 1vw, 1rem) auto;
+    padding: clamp(0.5rem, 0.5vw, 1rem);
 }
 
 .container {
@@ -918,21 +926,25 @@ body {
 /* Estilos para el mapa interactivo */
 .container-mapa {
   max-width: 90vw;
-  width: 100%;
+  width: 90%;
   margin: 0 auto;
   padding: 2vw;
   transform: scale(1.2);
   transform-origin: center;
+  margin-left: 5%;
 }
 
 .mapa-mundial {
-  width: 100%;
-  height: auto;
+  width: 90%;
+  height: clamp(50%, 10vw, 70%);
   display: block;
   border: 1px solid rgba(255,255,255,0.3);
   border-radius: 12px;
   background: rgba(255,255,255,0.1);
   backdrop-filter: blur(10px);
+  padding-left: 90px;
+  margin-left: 40px;
+
 }
 
 /* Estilos para los países */
@@ -1020,6 +1032,7 @@ body {
   margin-bottom: clamp(1rem, 2vw, 2rem);
   font-size: clamp(1.5rem, 4vw, 2.5rem);
   text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  padding-top: 0.2%;
 }
 
 /* Leyenda con escalado automático */
