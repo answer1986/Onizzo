@@ -574,7 +574,7 @@ body {
 
 .footer-section,
 .footer-section2 {
-    flex: 1 1 300px;  /* base de 300px, puede crecer o encoger */
+    flex: 1 1 250px;  /* base de 300px, puede crecer o encoger */
     min-width: 150px; /* no se reducirá más de 250px */
     margin-bottom: 50px;
 }
@@ -583,6 +583,8 @@ body {
 .footer-section2 h4 {
     margin-bottom: 10px;
     font-weight: bold;
+    min-width: 150px; /* no se reducirá más de 250px */
+
 }
 
 .footer-section a {
