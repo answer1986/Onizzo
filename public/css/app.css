@@ -394,7 +394,7 @@ body {
 
 .plano-1 {
     padding-bottom: 0px !important;
-
+    padding-top: 6px !important;
 }
 
 /* Elementos principales que se escalan automáticamente */
@@ -426,7 +426,7 @@ body {
 }
 
 .header-logo img {
-    width: clamp(200px, 25vw, 320px);
+    width: clamp(190px, 25vw, 290px);
     height: auto;
 }
 
