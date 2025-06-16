@@ -324,7 +324,7 @@
             <img src="{{ asset('image/Onizzo-logo.png') }}" alt="Logo ONIZZO" class="onizzo-logo2">
             
             <!-- Título de la sección de contacto -->
-            <h2 id="contacto-title">{{ __('messages.contact_us') }}</h2>
+            <h3 id="contacto-title">{{ __('messages.contact_us') }}</h3>
             
             <!-- Datos de contacto -->
             <div class="contact-details">
