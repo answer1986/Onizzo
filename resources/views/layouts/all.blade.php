@@ -111,6 +111,46 @@ document.addEventListener('DOMContentLoaded', function() {
 
 </script>  
 
+<script>
+// JavaScript para la interactividad del mapa mundial con círculo morado alrededor del puntero
+document.addEventListener('DOMContentLoaded', function() {
+    const circulos = document.querySelectorAll('.circulo-pais');
+    const hoverCircle = document.getElementById('hover-circle');
+    const hoverText = document.getElementById('hover-text');
+    
+    if (circulos.length > 0 && hoverCircle && hoverText) {
+        circulos.forEach(circulo => {
+            circulo.addEventListener('mouseenter', function(e) {
+                const pais = this.getAttribute('data-pais');
+                const cx = this.getAttribute('cx');
+                const cy = this.getAttribute('cy');
+                
+                // Posicionar el círculo morado ALREDEDOR del puntero
+                hoverCircle.setAttribute('cx', cx);
+                hoverCircle.setAttribute('cy', cy);
+                hoverCircle.classList.add('visible');
+                
+                // Posicionar y mostrar el texto DENTRO del círculo
+                hoverText.setAttribute('x', cx);
+                hoverText.setAttribute('y', cy);
+                hoverText.textContent = pais;
+                hoverText.classList.add('visible');
+            });
+            
+            circulo.addEventListener('mouseleave', function() {
+                hoverCircle.classList.remove('visible');
+                hoverText.classList.remove('visible');
+            });
+            
+            circulo.addEventListener('click', function() {
+                const pais = this.getAttribute('data-pais');
+                alert(`¡Has seleccionado ${pais}! 🌍\n\nEste país forma parte de nuestra red global.`);
+            });
+        });
+    }
+});
+</script>
+
 
 
 </body>
