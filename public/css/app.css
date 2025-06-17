@@ -57,7 +57,7 @@ body {
     text-align: center;
     color: #2c3e50;
     font-size: 2.5rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
     font-weight: 600;
 }
 
@@ -94,7 +94,7 @@ body {
 }
 
 .text-column p {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     line-height: 1.8;
     color: #555;
 }
