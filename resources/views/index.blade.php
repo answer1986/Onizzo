@@ -61,7 +61,7 @@
     <!-- Sobre Nosotros en PLANO 1 -->
     <section class="about-us-section">
         <div class="text-column">
-            <h3 id="nosotros">{{ __('messages.about_us') }}</h3>
+            <h4 id="nosotros">{{ __('messages.about_us') }}</h4>
             <p>{{ __('messages.about_us_description') }}</p>
         </div>
         <div class="image-column">
