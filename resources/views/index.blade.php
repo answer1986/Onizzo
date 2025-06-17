@@ -317,9 +317,9 @@
 <!-- PLANO 4: Contacto + Footer -->
 @section('contacto')
 <div class="plano-4">
-    <section class="contact-section" >
+    <section class="contact-section"  id="contacto">
         <!-- Columna izquierda con logo y título de contacto -->
-        <div class="left-column" id="contact-info">
+        <div class="left-column" id="contact-info" >
             <!-- Logo de ONIZZO -->
             <img src="{{ asset('image/Onizzo-logo.png') }}" alt="Logo ONIZZO" class="onizzo-logo2">
             
@@ -327,7 +327,7 @@
             <h3 id="contacto-title">{{ __('messages.contact_us') }} </h3>
             
             <!-- Datos de contacto -->
-            <div class="contact-details" id="contacto">
+            <div class="contact-details">
                 <div class="contact-item">
                     <div class="contact-info">
                         <i class="fas fa-envelope contact-icon"></i>
