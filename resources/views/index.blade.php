@@ -301,12 +301,12 @@
 
 <!-- PLANO 4: Contacto + Footer -->
 @section('contacto')
-<div class="plano-4">
+<div class="plano-4" id="contacto">
     <section class="contact-section" >
         <!-- Columna izquierda con logo y título de contacto -->
         <div class="left-column" id="contact-info" >
             <!-- Logo de ONIZZO -->
-            <img src="{{ asset('image/Onizzo-logo.png') }}" alt="Logo ONIZZO" class="onizzo-logo2"  id="contacto">
+            <img src="{{ asset('image/Onizzo-logo.png') }}" alt="Logo ONIZZO" class="onizzo-logo2"  >
             
             <!-- Título de la sección de contacto -->
             <h3 id="contacto-title">{{ __('messages.contact_us') }} </h3>
