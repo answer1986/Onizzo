@@ -59,9 +59,9 @@
     </div>
     
     <!-- Sobre Nosotros en PLANO 1 -->
-    <section class="about-us-section">
+    <section class="about-us-section" id="nosotros">
         <div class="text-column">
-            <h4 id="nosotros">{{ __('messages.about_us') }}</h4>
+            <h4>{{ __('messages.about_us') }}</h4>
             <p>{{ __('messages.about_us_description') }}</p>
         </div>
         <div class="image-column">
@@ -152,7 +152,7 @@
 @section('mercados')
 <div class="plano-3">
     <section class="ambiente-section">
-        <div class="ambiente-content" id="mercados" style="margin-left:10px";>More actions
+        <div class="ambiente-content" id="mercados" style="margin-left:10px";>
             <h2>{{ __('messages.our_commitment') }}</h2>
 
             <img src="{{ asset('./image/Mapa-Onizzo.png') }}" alt="{{ __('messages.world') }}" style="width:100%" >

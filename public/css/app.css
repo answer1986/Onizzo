@@ -296,6 +296,10 @@ body {
     margin-left: 5%;
 }
 
+#mercados{
+    scroll-margin-top: 90px;
+}
+
 .ambiente-section {
     width: 75%;
     text-align: center;
@@ -826,6 +830,7 @@ body {
   font-weight: 400px;
   font-style: normal;
   margin-bottom: 1%;
+  scroll-margin-top: 50px;
 }
 
 .image-container {
