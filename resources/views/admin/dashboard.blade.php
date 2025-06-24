@@ -1,0 +1,177 @@
+@extends('admin.layout')
+
+@section('title', 'Dashboard - Onizzo Admin')
+
+@section('content')
+    <div class="header-card">
+        <h1><i class="fas fa-tachometer-alt me-3"></i>Dashboard</h1>
+        <p class="mb-0">Bienvenido al panel de administración de Onizzo</p>
+    </div>
+
+    <div class="row mb-4">
+        <div class="col-md-6 col-lg-3 mb-3">
+            <div class="stats-card">
+                <div class="stats-icon text-primary">
+                    <i class="fas fa-file-text"></i>
+                </div>
+                <h3 class="text-primary">{{ $totalContents }}</h3>
+                <p class="text-muted mb-0">Contenidos</p>
+            </div>
+        </div>
+        
+        <div class="col-md-6 col-lg-3 mb-3">
+            <div class="stats-card">
+                <div class="stats-icon text-success">
+                    <i class="fas fa-images"></i>
+                </div>
+                <h3 class="text-success">{{ $totalImages }}</h3>
+                <p class="text-muted mb-0">Imágenes</p>
+            </div>
+        </div>
+        
+        <div class="col-md-6 col-lg-3 mb-3">
+            <div class="stats-card">
+                <div class="stats-icon text-warning">
+                    <i class="fas fa-globe"></i>
+                </div>
+                <h3 class="text-warning">2</h3>
+                <p class="text-muted mb-0">Idiomas</p>
+            </div>
+        </div>
+        
+        <div class="col-md-6 col-lg-3 mb-3">
+            <div class="stats-card">
+                <div class="stats-icon text-info">
+                    <i class="fas fa-cog"></i>
+                </div>
+                <h3 class="text-info">100%</h3>
+                <p class="text-muted mb-0">Sistema</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-8 mb-4">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="mb-0"><i class="fas fa-rocket me-2"></i>Acciones Rápidas</h5>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <a href="{{ route('admin.contents.create') }}" class="btn btn-primary w-100 py-3">
+                                <i class="fas fa-plus-circle me-2"></i>
+                                <strong>Nuevo Contenido</strong><br>
+                                <small>Agregar texto editable</small>
+                            </a>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <a href="{{ route('admin.images.create') }}" class="btn btn-success w-100 py-3">
+                                <i class="fas fa-upload me-2"></i>
+                                <strong>Subir Imagen</strong><br>
+                                <small>Agregar nueva imagen</small>
+                            </a>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <form action="{{ route('admin.contents.import') }}" method="POST" class="d-inline w-100">
+                                @csrf
+                                <button type="submit" class="btn btn-info w-100 py-3">
+                                    <i class="fas fa-download me-2"></i>
+                                    <strong>Importar Contenido</strong><br>
+                                    <small>Desde archivos existentes</small>
+                                </button>
+                            </form>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <form action="{{ route('admin.images.import') }}" method="POST" class="d-inline w-100">
+                                @csrf
+                                <button type="submit" class="btn btn-warning w-100 py-3">
+                                    <i class="fas fa-sync me-2"></i>
+                                    <strong>Importar Imágenes</strong><br>
+                                    <small>Registrar existentes</small>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="mb-0"><i class="fas fa-info-circle me-2"></i>Información del Sistema</h5>
+                </div>
+                <div class="card-body">
+                    <div class="mb-3">
+                        <strong>Laravel:</strong>
+                        <span class="text-muted">{{ app()->version() }}</span>
+                    </div>
+                    <div class="mb-3">
+                        <strong>PHP:</strong>
+                        <span class="text-muted">{{ PHP_VERSION }}</span>
+                    </div>
+                    <div class="mb-3">
+                        <strong>Entorno:</strong>
+                        <span class="badge bg-{{ app()->environment() === 'production' ? 'success' : 'warning' }}">
+                            {{ ucfirst(app()->environment()) }}
+                        </span>
+                    </div>
+                    <div class="mb-3">
+                        <strong>Idioma Actual:</strong>
+                        <span class="text-muted">{{ app()->getLocale() === 'es' ? 'Español' : 'English' }}</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card mt-3">
+                <div class="card-header">
+                    <h5 class="mb-0"><i class="fas fa-external-link-alt me-2"></i>Enlaces Útiles</h5>
+                </div>
+                <div class="card-body">
+                    <a href="{{ url('/') }}" target="_blank" class="btn btn-outline-primary btn-sm w-100 mb-2">
+                        <i class="fas fa-home me-2"></i>Ver Sitio Web
+                    </a>
+                    <a href="{{ route('admin.contents.index') }}" class="btn btn-outline-info btn-sm w-100 mb-2">
+                        <i class="fas fa-file-text me-2"></i>Gestionar Contenidos
+                    </a>
+                    <a href="{{ route('admin.images.index') }}" class="btn btn-outline-success btn-sm w-100">
+                        <i class="fas fa-images me-2"></i>Gestionar Imágenes
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="mb-0"><i class="fas fa-question-circle me-2"></i>Ayuda</h5>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <h6><i class="fas fa-edit me-2 text-primary"></i>Gestión de Contenidos</h6>
+                            <p class="text-muted small mb-3">
+                                Edita textos del sitio web en múltiples idiomas. Puedes modificar títulos, descripciones y cualquier contenido textual.
+                            </p>
+                        </div>
+                        <div class="col-md-4">
+                            <h6><i class="fas fa-image me-2 text-success"></i>Gestión de Imágenes</h6>
+                            <p class="text-muted small mb-3">
+                                Sube, edita y administra todas las imágenes del sitio. Compatible con JPG, PNG, SVG y WebP.
+                            </p>
+                        </div>
+                        <div class="col-md-4">
+                            <h6><i class="fas fa-globe me-2 text-info"></i>Multiidioma</h6>
+                            <p class="text-muted small mb-3">
+                                El sistema soporta español e inglés. Todos los contenidos pueden tener versiones en ambos idiomas.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+@endsection 
