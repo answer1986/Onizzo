@@ -151,155 +151,140 @@
 <!-- PLANO 3: Mapa de mercados -->
 @section('mercados')
 <div class="plano-3">
+    <section class="ambiente-section">
+        <div class="ambiente-content" id="mercados" style="margin-left:10px";>More actions
+            <h2>{{ __('messages.our_commitment') }}</h2>
+
+            <img src="{{ asset('./image/Mapa-Onizzo.png') }}" alt="{{ __('messages.world') }}" style="width:100%" >
+        </div>
+    </section>
+</div>
+@endsection
+
+
+
+<!-- 
+@section('mercados')
+<div class="plano-3">
     <div class="container-mapa" id="mercados">
         <h1>🌍 {{ __('messages.our_commitment') }}</h1>
         
         <svg class="mapa-mundial" viewBox="0 0 2754 1398" xmlns="http://www.w3.org/2000/svg">
-          <!-- Cargar el mapa desde el archivo SVG externo -->
           <image href="{{ asset('image/BlankMap-World.svg') }}" width="2754" height="1398" />
           
-          <!-- Círculos superpuestos para países seleccionados con coordenadas CORREGIDAS -->
           
-          <!-- AMÉRICA -->
-          <!-- Chile (destacado) - Coordenadas corregidas -->
+          
           <circle class="circulo-chile circulo-pais" cx="780" cy="950" r="12" data-pais="Chile">
             <title>Chile - Oficina Principal</title>
           </circle>
           
-          <!-- Argentina -->
           <circle class="circulo-pais" cx="850" cy="950" r="9" data-pais="Argentina">
             <title>Argentina</title>
           </circle>
           
-          <!-- Perú -->
           <circle class="circulo-pais" cx="760" cy="820" r="9" data-pais="Perú">
             <title>Perú</title>
           </circle>
           
-          <!-- Ecuador -->
           <circle class="circulo-pais" cx="690" cy="710" r="9" data-pais="Ecuador">
             <title>Ecuador</title>
           </circle>
           
-          <!-- Colombia -->
           <circle class="circulo-pais" cx="740" cy="680" r="9" data-pais="Colombia">
             <title>Colombia</title>
           </circle>
           
-          <!-- Panamá -->
           <circle class="circulo-pais" cx="660" cy="600" r="9" data-pais="Panamá">
             <title>Panamá</title>
           </circle>
           
-          <!-- Costa Rica -->
           <circle class="circulo-pais" cx="620" cy="580" r="9" data-pais="Costa Rica">
             <title>Costa Rica</title>
           </circle>
           
-          <!-- República Dominicana -->
           <circle class="circulo-pais" cx="760" cy="530" r="9" data-pais="República Dominicana">
             <title>República Dominicana</title>
           </circle>
           
-          <!-- México -->
           <circle class="circulo-pais" cx="560" cy="530" r="18" data-pais="México">
             <title>México</title>
           </circle>
           
-          <!-- Estados Unidos (zona sur) -->
           <circle class="circulo-pais" cx="670" cy="380" r="18" data-pais="Estados Unidos">
             <title>Estados Unidos</title>
           </circle>
           
-          <!-- EUROPA Y MEDIO ORIENTE -->
-          <!-- España -->
+        
           <circle class="circulo-pais" cx="1300" cy="330" r="18" data-pais="España">
             <title>España</title>
           </circle>
           
-          <!-- Francia -->
           <circle class="circulo-pais" cx="1340" cy="320" r="18" data-pais="Francia">
             <title>Francia</title>
           </circle>
           
-          <!-- Italia -->
           <circle class="circulo-pais" cx="1800" cy="330" r="18" data-pais="Italia">
             <title>Italia</title>
           </circle>
           
-          <!-- Alemania -->
           <circle class="circulo-pais" cx="1380" cy="280" r="18" data-pais="Alemania">
             <title>Alemania</title>
           </circle>
           
-          <!-- Suiza -->
           <circle class="circulo-pais" cx="1800" cy="190" r="18" data-pais="Suiza">
             <title>Suiza</title>
           </circle>
           
-          <!-- Países Bajos -->
           <circle class="circulo-pais" cx="1350" cy="270" r="18" data-pais="Países Bajos">
             <title>Países Bajos</title>
           </circle>
          
-          <!-- Reino Unido -->
           <circle class="circulo-pais" cx="1300" cy="260" r="18" data-pais="Reino Unido">
             <title>Reino Unido</title>
           </circle>
           
-          <!-- Turquía -->
           <circle class="circulo-pais" cx="1550" cy="370" r="18" data-pais="Turquía">
             <title>Turquía</title>
           </circle>
           
-          <!-- Grecia -->
           <circle class="circulo-pais" cx="1850" cy="360" r="18" data-pais="Grecia">
             <title>Grecia</title>
           </circle>
           
-          <!-- Túnez -->
           <circle class="circulo-pais" cx="1380" cy="420" r="18" data-pais="Túnez">
             <title>Túnez</title>
           </circle>
           
-          <!-- ASIA Y OCEANÍA -->
-          <!-- India -->
+        
           <circle class="circulo-pais" cx="1900" cy="600" r="18" data-pais="India">
             <title>India</title>
           </circle>
           
-          <!-- China -->
           <circle class="circulo-pais" cx="2100" cy="450" r="18" data-pais="China">
             <title>China</title>
           </circle>
           
-          <!-- Vietnam -->
           <circle class="circulo-pais" cx="2110" cy="570" r="18" data-pais="Vietnam">
             <title>Vietnam</title>
           </circle>
           
-          <!-- Corea del Sur -->
           <circle class="circulo-pais" cx="2220" cy="380" r="18" data-pais="Corea del Sur">
             <title>Corea del Sur</title>
           </circle>
           
-          <!-- Australia -->
           <circle class="circulo-pais" cx="2300" cy="900" r="18" data-pais="Australia">
             <title>Australia</title>
           </circle>
           
-          <!-- ÁFRICA -->
-          <!-- Sudáfrica -->
+        
           <circle class="circulo-pais" cx="1520" cy="900" r="18" data-pais="Sudáfrica">
             <title>Sudáfrica</title>
           </circle>
           
-          <!-- Elementos de hover -->
           <circle class="hover-circle" id="hover-circle" r="40"/>
           <text class="hover-text" id="hover-text"></text>
         </svg>
         
-        <!-- Leyenda -->
         <div class="leyenda">
           <div class="leyenda-item">
             <div class="leyenda-circulo leyenda-chile"></div>
