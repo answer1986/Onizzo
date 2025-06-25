@@ -150,7 +150,8 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 
-
+<!-- Incluir el editor inline si está autenticado -->
+@include('components.inline-editor')
 
 </body>
 </html>

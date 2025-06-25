@@ -12,6 +12,25 @@ Route::get('/', function () {
 
 Route::get('lang/{lang}', [LanguageController::class, 'switchLang'])->name('lang.switch');
 
+// APIs para edición inline (nuevas rutas)
+Route::post('/api/admin/content/update', [AdminController::class, 'updateContent'])->name('api.content.update');
+Route::post('/api/admin/image/update', [AdminController::class, 'updateImage'])->name('api.image.update');
+Route::post('/api/admin/image/delete', [AdminController::class, 'deleteImage'])->name('api.image.delete');
+
+// Ruta de prueba para debug
+Route::get('/test-delete', function() {
+    return view('test-delete');
+});
+Route::get('/test-delete-api', function() {
+    \Log::info('=== TEST DELETE API CALLED ===');
+    return response()->json([
+        'success' => true,
+        'message' => 'API funcionando',
+        'session_auth' => session('admin_authenticated'),
+        'method' => request()->method()
+    ]);
+});
+
 // Rutas del Admin
 Route::prefix('admin')->name('admin.')->group(function () {
     Route::get('/login', [AdminController::class, 'login'])->name('login');

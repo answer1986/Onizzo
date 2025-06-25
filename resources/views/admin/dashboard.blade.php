@@ -4,8 +4,15 @@
 
 @section('content')
     <div class="header-card">
-        <h1><i class="fas fa-tachometer-alt me-3"></i>Dashboard</h1>
-        <p class="mb-0">Bienvenido al panel de administración de Onizzo</p>
+        <div class="d-flex justify-content-between align-items-center">
+            <div>
+                <h1><i class="fas fa-tachometer-alt me-3"></i>Dashboard</h1>
+                <p class="mb-0">Bienvenido al panel de administración de Onizzo</p>
+            </div>
+            <a href="{{ url('/') }}" target="_blank" class="btn btn-success">
+                <i class="fas fa-edit me-2"></i>Editar Sitio Visualmente
+            </a>
+        </div>
     </div>
 
     <div class="row mb-4">
@@ -54,22 +61,22 @@
         <div class="col-md-8 mb-4">
             <div class="card">
                 <div class="card-header">
-                    <h5 class="mb-0"><i class="fas fa-rocket me-2"></i>Acciones Rápidas</h5>
+                    <h5 class="mb-0"><i class="fas fa-rocket me-2"></i>Opciones de Edición</h5>
                 </div>
                 <div class="card-body">
                     <div class="row">
                         <div class="col-md-6 mb-3">
-                            <a href="{{ route('admin.contents.create') }}" class="btn btn-primary w-100 py-3">
-                                <i class="fas fa-plus-circle me-2"></i>
-                                <strong>Nuevo Contenido</strong><br>
-                                <small>Agregar texto editable</small>
+                            <a href="{{ url('/') }}" target="_blank" class="btn btn-success w-100 py-3">
+                                <i class="fas fa-edit me-2"></i>
+                                <strong>Edición Visual</strong><br>
+                                <small>Edita directamente en el sitio web</small>
                             </a>
                         </div>
                         <div class="col-md-6 mb-3">
-                            <a href="{{ route('admin.images.create') }}" class="btn btn-success w-100 py-3">
-                                <i class="fas fa-upload me-2"></i>
-                                <strong>Subir Imagen</strong><br>
-                                <small>Agregar nueva imagen</small>
+                            <a href="{{ route('admin.contents.index') }}" class="btn btn-primary w-100 py-3">
+                                <i class="fas fa-list me-2"></i>
+                                <strong>Gestión Avanzada</strong><br>
+                                <small>Panel de administración completo</small>
                             </a>
                         </div>
                         <div class="col-md-6 mb-3">
@@ -129,8 +136,8 @@
                     <h5 class="mb-0"><i class="fas fa-external-link-alt me-2"></i>Enlaces Útiles</h5>
                 </div>
                 <div class="card-body">
-                    <a href="{{ url('/') }}" target="_blank" class="btn btn-outline-primary btn-sm w-100 mb-2">
-                        <i class="fas fa-home me-2"></i>Ver Sitio Web
+                    <a href="{{ url('/') }}" target="_blank" class="btn btn-outline-success btn-sm w-100 mb-2">
+                        <i class="fas fa-edit me-2"></i>Editar Visualmente
                     </a>
                     <a href="{{ route('admin.contents.index') }}" class="btn btn-outline-info btn-sm w-100 mb-2">
                         <i class="fas fa-file-text me-2"></i>Gestionar Contenidos
@@ -147,26 +154,26 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
-                    <h5 class="mb-0"><i class="fas fa-question-circle me-2"></i>Ayuda</h5>
+                    <h5 class="mb-0"><i class="fas fa-question-circle me-2"></i>Cómo Usar la Edición Visual</h5>
                 </div>
                 <div class="card-body">
                     <div class="row">
                         <div class="col-md-4">
-                            <h6><i class="fas fa-edit me-2 text-primary"></i>Gestión de Contenidos</h6>
+                            <h6><i class="fas fa-mouse-pointer me-2 text-success"></i>Paso 1</h6>
                             <p class="text-muted small mb-3">
-                                Edita textos del sitio web en múltiples idiomas. Puedes modificar títulos, descripciones y cualquier contenido textual.
+                                Haz clic en <strong>"Editar Sitio Visualmente"</strong> para abrir tu sitio web con los controles de edición activados.
                             </p>
                         </div>
                         <div class="col-md-4">
-                            <h6><i class="fas fa-image me-2 text-success"></i>Gestión de Imágenes</h6>
+                            <h6><i class="fas fa-edit me-2 text-primary"></i>Paso 2</h6>
                             <p class="text-muted small mb-3">
-                                Sube, edita y administra todas las imágenes del sitio. Compatible con JPG, PNG, SVG y WebP.
+                                Verás lapicitos <i class="fas fa-edit text-primary"></i> al lado de cada texto e imagen. Haz clic en ellos para editar.
                             </p>
                         </div>
                         <div class="col-md-4">
-                            <h6><i class="fas fa-globe me-2 text-info"></i>Multiidioma</h6>
+                            <h6><i class="fas fa-save me-2 text-info"></i>Paso 3</h6>
                             <p class="text-muted small mb-3">
-                                El sistema soporta español e inglés. Todos los contenidos pueden tener versiones en ambos idiomas.
+                                Edita el contenido y guarda. Los cambios se aplicarán inmediatamente en tu sitio web.
                             </p>
                         </div>
                     </div>

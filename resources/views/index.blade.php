@@ -21,36 +21,36 @@
 <div class="plano-1">
     <div class="container" id="productos-seccion1">
         <div class="header">
-            <h1>{{ __('messages.our_products') }}</h1>
+            <h1>{!! editableContent('our_products', 'productos', __('messages.our_products'), 'text') !!}</h1>
         </div>
         <div class="content-wrapper">
             <div class="image-container">
                 <div class="image">
-                    <img src="{{ asset('./image/productos/ciruelas.png') }}" alt="ciruelas">
+                    {!! editableImage('product_ciruelas', './image/productos/ciruelas.png', 'ciruelas', 'productos') !!}
                     <div class="text-overlay">
-                        <h3>{{ __('messages.dried_plums') }}</h3>
-                        <p>{{ __('messages.dried_plums_desc') }}</p>
+                        <h3>{!! editableContent('dried_plums', 'productos', __('messages.dried_plums'), 'text') !!}</h3>
+                        <p>{!! editableContent('dried_plums_desc', 'productos', __('messages.dried_plums_desc'), 'textarea') !!}</p>
                     </div>
                 </div>
                 <div class="image">
-                    <img src="{{ asset('./image/productos/ajos.png') }}" alt="ajos">
+                    {!! editableImage('product_ajos', './image/productos/ajos.png', 'ajos', 'productos') !!}
                     <div class="text-overlay">
-                        <h3>{{ __('messages.fresh_garlic') }}</h3>
-                        <p>{{ __('messages.fresh_garlic_desc') }}</p>
+                        <h3>{!! editableContent('fresh_garlic', 'productos', __('messages.fresh_garlic'), 'text') !!}</h3>
+                        <p>{!! editableContent('fresh_garlic_desc', 'productos', __('messages.fresh_garlic_desc'), 'text') !!}</p>
                     </div>
                 </div>
                 <div class="image">
-                    <img src="{{ asset('./image/productos/guinda.png') }}" alt="guindas">
+                    {!! editableImage('product_guinda', './image/productos/guinda.png', 'guindas', 'productos') !!}
                     <div class="text-overlay">
-                        <h3>{{ __('messages.fresh_cherries') }}</h3>
-                        <p>{{ __('messages.fresh_cherries_desc') }}</p>
+                        <h3>{!! editableContent('fresh_cherries', 'productos', __('messages.fresh_cherries'), 'text') !!}</h3>
+                        <p>{!! editableContent('fresh_cherries_desc', 'productos', __('messages.fresh_cherries_desc'), 'text') !!}</p>
                     </div>
                 </div>
                 <div class="image">
-                    <img src="{{ asset('./image/productos/nueces.png') }}" alt="nueces">
+                    {!! editableImage('product_nueces', './image/productos/nueces.png', 'nueces', 'productos') !!}
                     <div class="text-overlay">
-                        <h3>{{ __('messages.walnuts') }}</h3>
-                        <p>{{ __('messages.walnuts_desc') }}</p>
+                        <h3>{!! editableContent('walnuts', 'productos', __('messages.walnuts'), 'text') !!}</h3>
+                        <p>{!! editableContent('walnuts_desc', 'productos', __('messages.walnuts_desc'), 'text') !!}</p>
                     </div>
                 </div>
             </div>
@@ -61,15 +61,15 @@
     <!-- Sobre Nosotros en PLANO 1 -->
     <section class="about-us-section" id="nosotros">
         <div class="text-column">
-            <h4>{{ __('messages.about_us') }}</h4>
-            <p>{{ __('messages.about_us_description') }}</p>
+            <h4>{!! editableContent('about_us', 'nosotros', __('messages.about_us'), 'text') !!}</h4>
+            <p>{!! editableContent('about_us_description', 'nosotros', __('messages.about_us_description'), 'textarea') !!}</p>
         </div>
         <div class="image-column">
             <div class="carousel">
-                <img class="carousel-image active" src="{{ asset('./image/frutas secas.jpeg') }}" alt="{{ __('messages.carousel_image_1') }}">
-                <img class="carousel-image" src="{{ asset('./image/pasas.jpeg') }}" alt="{{ __('messages.carousel_image_2') }}">
-                <img class="carousel-image" src="{{ asset('./image/ciruela.png') }}" alt="{{ __('messages.carousel_image_3') }}">
-                <img class="carousel-image" src="{{ asset('./image/Jefe.jpeg') }}" alt="{{ __('messages.carousel_image_4') }}">
+                {!! editableImage('carousel_image_1', './image/frutas secas.jpeg', __('messages.carousel_image_1'), 'nosotros', 'carousel-image active') !!}
+                {!! editableImage('carousel_image_2', './image/pasas.jpeg', __('messages.carousel_image_2'), 'nosotros', 'carousel-image') !!}
+                {!! editableImage('carousel_image_3', './image/ciruela.png', __('messages.carousel_image_3'), 'nosotros', 'carousel-image') !!}
+                {!! editableImage('carousel_image_4', './image/Jefe.jpeg', __('messages.carousel_image_4'), 'nosotros', 'carousel-image') !!}
             </div>
         </div>
     </section>
@@ -85,58 +85,58 @@
     <div class="slider-container">
         <div class="main-slider">
             <div class="slider-item active">
-                <img src="{{ asset('./image/carrusel/pasas-1.jpeg') }}" alt="{{ __('messages.slider_pasas') }}">
+                {!! editableImage('slider_img_pasas', './image/carrusel/pasas-1.jpeg', __('messages.slider_pasas'), 'slider') !!}
                 <div class="slider-content">
-                    <h3>{{ __('messages.slider_pasas') }}</h3>
-                    <p>{{ __('messages.slider_pasas_description') }}</p>
+                    <h3>{!! editableContent('slider_pasas', 'slider', __('messages.slider_pasas'), 'text') !!}</h3>
+                    <p>{!! editableContent('slider_pasas_description', 'slider', __('messages.slider_pasas_description'), 'textarea') !!}</p>
                 </div>
             </div>
             <div class="slider-item">
-                <img src="{{ asset('./image/carrusel/agro.png') }}" alt="{{ __('messages.slider_agro') }}">
+                {!! editableImage('slider_img_agro', './image/carrusel/agro.png', __('messages.slider_agro'), 'slider') !!}
                 <div class="slider-content">
-                    <h3>{{ __('messages.slider_agro') }}</h3>
-                    <p>{{ __('messages.slider_agro_description') }}</p>
+                    <h3>{!! editableContent('slider_agro', 'slider', __('messages.slider_agro'), 'text') !!}</h3>
+                    <p>{!! editableContent('slider_agro_description', 'slider', __('messages.slider_agro_description'), 'textarea') !!}</p>
                 </div>
             </div>
             <div class="slider-item">
-                <img src="{{ asset('./image/carrusel/agricultura.jpeg') }}" alt="{{ __('messages.slider_agriculture') }}">
+                {!! editableImage('slider_img_agricultura', './image/carrusel/agricultura.jpeg', __('messages.slider_agriculture'), 'slider') !!}
                 <div class="slider-content">
-                    <h3>{{ __('messages.slider_agriculture') }}</h3>
-                    <p>{{ __('messages.slider_agriculture_description') }}</p>
+                    <h3>{!! editableContent('slider_agriculture', 'slider', __('messages.slider_agriculture'), 'text') !!}</h3>
+                    <p>{!! editableContent('slider_agriculture_description', 'slider', __('messages.slider_agriculture_description'), 'textarea') !!}</p>
                 </div>
             </div>
             <!-- Agregando los slides faltantes -->
             <div class="slider-item">
-                <img src="{{ asset('./image/carrusel/trucks.jpg') }}" alt="{{ __('messages.slider_camion') }}">
+                {!! editableImage('slider_img_camion', './image/carrusel/trucks.jpg', __('messages.slider_camion'), 'slider') !!}
                 <div class="slider-content">
-                    <h3>{{ __('messages.slider_camion') }}</h3>
-                    <p>{{ __('messages.slider_camion_description') }}</p>
+                    <h3>{!! editableContent('slider_camion', 'slider', __('messages.slider_camion'), 'text') !!}</h3>
+                    <p>{!! editableContent('slider_camion_description', 'slider', __('messages.slider_camion_description'), 'textarea') !!}</p>
                 </div>
             </div>
             <div class="slider-item">
-                <img src="{{ asset('./image/carrusel/barco2.jpg') }}" alt="{{ __('messages.slider_barco') }}">
+                {!! editableImage('slider_img_barco', './image/carrusel/barco2.jpg', __('messages.slider_barco'), 'slider') !!}
                 <div class="slider-content">
-                    <h3>{{ __('messages.slider_barco') }}</h3>
-                    <p>{{ __('messages.slider_barco_description') }}</p>
+                    <h3>{!! editableContent('slider_barco', 'slider', __('messages.slider_barco'), 'text') !!}</h3>
+                    <p>{!! editableContent('slider_barco_description', 'slider', __('messages.slider_barco_description'), 'textarea') !!}</p>
                 </div>
             </div>
         </div>
         
         <div class="thumbnail-slider">
             <div class="thumbnail-item active">
-                <img src="{{ asset('./image/carrusel/agricultura.jpeg') }}" alt="{{ __('messages.slider_agriculture') }}">
+                {!! editableImage('slider_thumb_agricultura', './image/carrusel/agricultura.jpeg', __('messages.slider_agriculture'), 'slider') !!}
             </div>
             <div class="thumbnail-item">
-                <img src="{{ asset('./image/carrusel/agro.png') }}" alt="{{ __('messages.slider_agro') }}">
+                {!! editableImage('slider_thumb_agro', './image/carrusel/agro.png', __('messages.slider_agro'), 'slider') !!}
             </div>
             <div class="thumbnail-item">
-                <img src="{{ asset('./image/carrusel/pasas-1.jpeg') }}" alt="{{ __('messages.slider_pasas') }}">
+                {!! editableImage('slider_thumb_pasas', './image/carrusel/pasas-1.jpeg', __('messages.slider_pasas'), 'slider') !!}
             </div>
             <div class="thumbnail-item">
-                <img src="{{ asset('./image/carrusel/camion.jpg') }}" alt="{{ __('messages.slider_camion') }}">
+                {!! editableImage('slider_thumb_camion', './image/carrusel/camion.jpg', __('messages.slider_camion'), 'slider') !!}
             </div>
             <div class="thumbnail-item">
-                <img src="{{ asset('./image/carrusel/barco.jpg') }}" alt="{{ __('messages.slider_barco') }}">
+                {!! editableImage('slider_thumb_barco', './image/carrusel/barco.jpg', __('messages.slider_barco'), 'slider') !!}
             </div>
         </div>
         
@@ -153,9 +153,9 @@
 <div class="plano-3">
     <section class="ambiente-section">
         <div class="ambiente-content" id="mercados" style="margin-left:10px";>
-            <h2>{{ __('messages.our_commitment') }}</h2>
+            <h2>{!! editableContent('our_commitment', 'mercados', __('messages.our_commitment'), 'text') !!}</h2>
 
-            <img src="{{ asset('./image/Mapa-Onizzo.png') }}" alt="{{ __('messages.world') }}" style="width:100%" >
+            {!! editableImage('world_map', './image/Mapa-Onizzo.png', __('messages.world'), 'mercados', '', 'width:100%') !!}
         </div>
     </section>
 </div>
