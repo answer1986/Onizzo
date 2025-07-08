@@ -165,6 +165,12 @@
                         <a class="nav-link {{ request()->routeIs('admin.images.*') ? 'active' : '' }}" href="{{ route('admin.images.index') }}">
                             <i class="fas fa-images"></i> Imágenes
                         </a>
+                        <a class="nav-link {{ request()->routeIs('admin.carousel.*') ? 'active' : '' }}" href="{{ route('admin.carousel.index') }}">
+                            <i class="fas fa-film"></i> Carrusel
+                        </a>
+                        <a class="nav-link {{ request()->routeIs('admin.slider.*') ? 'active' : '' }}" href="{{ route('admin.slider.index') }}">
+                            <i class="fas fa-play-circle"></i> Slider
+                        </a>
                         <a class="nav-link" href="{{ url('/') }}" target="_blank">
                             <i class="fas fa-external-link-alt"></i> Ver Sitio
                         </a>

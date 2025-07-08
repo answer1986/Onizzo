@@ -17,7 +17,14 @@ class Image extends Model
         'alt_text_en',
         'section',
         'description',
-        'is_active'
+        'is_active',
+        'carousel_order',
+        'slider_order',
+        'thumbnail_path',
+        'title_es',
+        'title_en',
+        'content_es',
+        'content_en'
     ];
 
     protected $casts = [
@@ -54,5 +61,33 @@ class Image extends Model
         return self::where('key', $key)
                    ->where('is_active', true)
                    ->first();
+    }
+
+    /**
+     * Obtener el título en el idioma actual
+     */
+    public function getTitle($lang = null)
+    {
+        $lang = $lang ?: app()->getLocale();
+        
+        if ($lang === 'es') {
+            return $this->title_es ?: $this->title_en;
+        } else {
+            return $this->title_en ?: $this->title_es;
+        }
+    }
+
+    /**
+     * Obtener el contenido en el idioma actual
+     */
+    public function getContent($lang = null)
+    {
+        $lang = $lang ?: app()->getLocale();
+        
+        if ($lang === 'es') {
+            return $this->content_es ?: $this->content_en;
+        } else {
+            return $this->content_en ?: $this->content_es;
+        }
     }
 }

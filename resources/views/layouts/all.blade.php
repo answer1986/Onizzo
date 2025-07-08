@@ -66,6 +66,7 @@ setInterval(showNextImage, 3000);
 
 
 <script>
+// SLIDER DINÁMICO MEJORADO - SOPORTA NÚMERO VARIABLE DE SLIDES
 document.addEventListener('DOMContentLoaded', function() {
     const mainSlider = document.querySelector('.main-slider');
     const thumbnailSlider = document.querySelector('.thumbnail-slider');
@@ -74,38 +75,136 @@ document.addEventListener('DOMContentLoaded', function() {
     const slides = document.querySelectorAll('.slider-item');
     const thumbnails = document.querySelectorAll('.thumbnail-item');
     let currentIndex = 0;
+    let sliderInterval;
+
+    // Solo ejecutar si hay slider presente
+    if (!mainSlider || slides.length === 0) {
+        return;
+    }
 
     function showSlide(index) {
+        // Validar índice
+        if (index < 0 || index >= slides.length) {
+            return;
+        }
+
+        // Actualizar slides principales
         slides.forEach((slide, i) => {
             slide.classList.toggle('active', i === index);
         });
-        thumbnails.forEach((thumb, i) => {
-            thumb.classList.toggle('active', i === index);
-        });
+
+        // Actualizar thumbnails si existen
+        if (thumbnails.length > 0) {
+            thumbnails.forEach((thumb, i) => {
+                thumb.classList.toggle('active', i === index);
+            });
+        }
+
+        currentIndex = index;
+        console.log('Mostrando slide:', index + 1, 'de', slides.length);
     }
 
     function nextSlide() {
-        currentIndex = (currentIndex + 1) % slides.length;
-        showSlide(currentIndex);
+        const nextIndex = (currentIndex + 1) % slides.length;
+        showSlide(nextIndex);
     }
 
     function prevSlide() {
-        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-        showSlide(currentIndex);
+        const prevIndex = (currentIndex - 1 + slides.length) % slides.length;
+        showSlide(prevIndex);
     }
 
-    nextBtn.addEventListener('click', nextSlide);
-    prevBtn.addEventListener('click', prevSlide);
+    function startSlider() {
+        if (slides.length > 1) {
+            sliderInterval = setInterval(nextSlide, 7000);
+        }
+    }
 
+    function stopSlider() {
+        if (sliderInterval) {
+            clearInterval(sliderInterval);
+        }
+    }
+
+    // Configurar controles de navegación
+    if (prevBtn) {
+        prevBtn.addEventListener('click', () => {
+            stopSlider();
+            prevSlide();
+            startSlider();
+        });
+    }
+
+    if (nextBtn) {
+        nextBtn.addEventListener('click', () => {
+            stopSlider();
+            nextSlide();
+            startSlider();
+        });
+    }
+
+    // Configurar navegación por thumbnails
     thumbnails.forEach((thumb, index) => {
         thumb.addEventListener('click', () => {
-            currentIndex = index;
-            showSlide(currentIndex);
+            stopSlider();
+            showSlide(index);
+            startSlider();
         });
     });
 
-    // Avance automático cada 7 segundos
-    setInterval(nextSlide, 7000);
+    // Pausar slider al hacer hover sobre el slider
+    if (mainSlider) {
+        mainSlider.addEventListener('mouseenter', stopSlider);
+        mainSlider.addEventListener('mouseleave', startSlider);
+    }
+
+    // Navegación con teclado
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') {
+            stopSlider();
+            prevSlide();
+            startSlider();
+        } else if (e.key === 'ArrowRight') {
+            stopSlider();
+            nextSlide();
+            startSlider();
+        }
+    });
+
+    // Iniciar slider automático
+    startSlider();
+
+    // Mostrar primer slide
+    showSlide(0);
+
+    // Funciones globales para control externo
+    window.goToSlide = function(index) {
+        stopSlider();
+        showSlide(index);
+        startSlider();
+    };
+
+    window.nextSliderSlide = function() {
+        stopSlider();
+        nextSlide();
+        startSlider();
+    };
+
+    window.prevSliderSlide = function() {
+        stopSlider();
+        prevSlide();
+        startSlider();
+    };
+
+    window.pauseSlider = function() {
+        stopSlider();
+    };
+
+    window.resumeSlider = function() {
+        startSlider();
+    };
+
+    console.log('Slider dinámico inicializado con', slides.length, 'slides y', thumbnails.length, 'thumbnails');
 });
 
 </script>  

@@ -46,4 +46,28 @@ if (!function_exists('editableImage')) {
         
         return '<img src="' . asset($imagePath) . '" alt="' . $altText . '" class="' . $class . '">';
     }
+}
+
+if (!function_exists('getCarouselImages')) {
+    /**
+     * Obtener imágenes del carrusel dinámicamente
+     */
+    function getCarouselImages() {
+        return Image::where('section', 'nosotros')
+                   ->whereNotNull('carousel_order')
+                   ->orderBy('carousel_order')
+                   ->get();
+    }
+}
+
+if (!function_exists('getSliderImages')) {
+    /**
+     * Obtener imágenes del slider dinámicamente
+     */
+    function getSliderImages() {
+        return Image::where('section', 'slider')
+                   ->whereNotNull('slider_order')
+                   ->orderBy('slider_order')
+                   ->get();
+    }
 } 

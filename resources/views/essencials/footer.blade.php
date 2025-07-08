@@ -44,7 +44,7 @@
 
     <!-- Sección inferior -->
     <div class="footer-bottom">
-        <p>{{ __('messages.development_by') }}</p>
+        <p><a href="https://r3q.cl" target="_blank" rel="noopener noreferrer">{{ __('messages.development_by') }}</a></p>
     </div>
 </footer>
 

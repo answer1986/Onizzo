@@ -66,10 +66,41 @@
         </div>
         <div class="image-column">
             <div class="carousel">
-                {!! editableImage('carousel_image_1', './image/frutas secas.jpeg', __('messages.carousel_image_1'), 'nosotros', 'carousel-image active') !!}
-                {!! editableImage('carousel_image_2', './image/pasas.jpeg', __('messages.carousel_image_2'), 'nosotros', 'carousel-image') !!}
-                {!! editableImage('carousel_image_3', './image/ciruela.png', __('messages.carousel_image_3'), 'nosotros', 'carousel-image') !!}
-                {!! editableImage('carousel_image_4', './image/Jefe.jpeg', __('messages.carousel_image_4'), 'nosotros', 'carousel-image') !!}
+                @php $carouselImages = getCarouselImages(); @endphp
+                @if($carouselImages->count() > 0)
+                    @foreach($carouselImages as $index => $image)
+                        @if(session('admin_authenticated'))
+                            <div class="editable-image-container carousel-image-wrapper {{ $index == 0 ? 'active' : '' }}" data-index="{{ $index }}">
+                                <img src="{{ asset($image->path) }}" alt="{{ $image->getAltText() }}" class="carousel-image {{ $index == 0 ? 'active' : '' }}" id="carousel-img-{{ $image->id }}">
+                                <i class="fas fa-edit edit-icon" 
+                                   style="position: absolute; top: 5px; right: 5px; color: #007bff; cursor: pointer; 
+                                          background: rgba(255,255,255,0.9); padding: 4px; border-radius: 3px; font-size: 14px;
+                                          box-shadow: 0 2px 4px rgba(0,0,0,0.2);"
+                                   title="Cambiar esta imagen"
+                                   onclick="editImage('{{ $image->key }}', 'nosotros')"></i>
+                            </div>
+                        @else
+                            <img src="{{ asset($image->path) }}" alt="{{ $image->getAltText() }}" class="carousel-image {{ $index == 0 ? 'active' : '' }}" data-index="{{ $index }}">
+                        @endif
+                    @endforeach
+                @else
+                    {{-- Imágenes por defecto si no hay imágenes del carrusel --}}
+                    <img src="{{ asset('./image/frutas secas.jpeg') }}" alt="Frutas Secas" class="carousel-image active" data-index="0">
+                    <img src="{{ asset('./image/pasas.jpeg') }}" alt="Pasas" class="carousel-image" data-index="1">
+                    <img src="{{ asset('./image/ciruela.png') }}" alt="Ciruelas" class="carousel-image" data-index="2">
+                    <img src="{{ asset('./image/Jefe.jpeg') }}" alt="Jefe" class="carousel-image" data-index="3">
+                @endif
+                
+                {{-- Botón para agregar más imágenes (solo en modo admin) --}}
+                @if(session('admin_authenticated'))
+                    <div class="add-carousel-image-btn" onclick="window.open('{{ route('admin.carousel.index') }}', '_blank')" 
+                         style="position: absolute; top: 10px; left: 10px; background: rgba(40, 167, 69, 0.9); 
+                                color: white; padding: 8px 12px; border-radius: 5px; cursor: pointer; 
+                                font-size: 12px; box-shadow: 0 2px 4px rgba(0,0,0,0.2);"
+                         title="Gestionar imágenes del carrusel">
+                        <i class="fas fa-plus"></i> Gestionar Carrusel
+                    </div>
+                @endif
             </div>
         </div>
     </section>
@@ -84,6 +115,7 @@
 <div class="plano-2">
     <div class="slider-container">
         <div class="main-slider">
+            <!-- SLIDES ORIGINALES - MANTENEMOS LO QUE FUNCIONABA -->
             <div class="slider-item active">
                 {!! editableImage('slider_img_pasas', './image/carrusel/pasas-1.jpeg', __('messages.slider_pasas'), 'slider') !!}
                 <div class="slider-content">
@@ -105,7 +137,6 @@
                     <p>{!! editableContent('slider_agriculture_description', 'slider', __('messages.slider_agriculture_description'), 'textarea') !!}</p>
                 </div>
             </div>
-            <!-- Agregando los slides faltantes -->
             <div class="slider-item">
                 {!! editableImage('slider_img_camion', './image/carrusel/trucks.jpg', __('messages.slider_camion'), 'slider') !!}
                 <div class="slider-content">
@@ -120,9 +151,37 @@
                     <p>{!! editableContent('slider_barco_description', 'slider', __('messages.slider_barco_description'), 'textarea') !!}</p>
                 </div>
             </div>
+            
+            <!-- SLIDES ADICIONALES DINÁMICOS - AGREGAMOS MÁS -->
+            @php $additionalSliders = getSliderImages(); @endphp
+            @if($additionalSliders->count() > 0)
+                @foreach($additionalSliders as $slide)
+                    <div class="slider-item" data-slide-id="{{ $slide->id }}">
+                        @if(session('admin_authenticated'))
+                            <div class="editable-image-container" style="position: relative; width: 100%; height: 100%;">
+                                <img src="{{ asset($slide->path) }}" alt="{{ $slide->getAltText() }}" style="width: 100%; height: 100%; object-fit: cover;">
+                                <i class="fas fa-edit edit-icon" 
+                                   style="position: absolute; top: 15px; right: 15px; color: #007bff; cursor: pointer; 
+                                          background: rgba(255,255,255,0.9); padding: 8px; border-radius: 5px; font-size: 16px;
+                                          box-shadow: 0 2px 8px rgba(0,0,0,0.3); z-index: 5;"
+                                   title="Editar este slide adicional"
+                                   onclick="window.open('{{ route('admin.slider.index') }}', '_blank')"></i>
+                            </div>
+                        @else
+                            <img src="{{ asset($slide->path) }}" alt="{{ $slide->getAltText() }}" style="width: 100%; height: 100%; object-fit: cover;">
+                        @endif
+                        
+                        <div class="slider-content">
+                            <h3>{{ $slide->getTitle() }}</h3>
+                            <p>{{ $slide->getContent() }}</p>
+                        </div>
+                    </div>
+                @endforeach
+            @endif
         </div>
         
         <div class="thumbnail-slider">
+            <!-- THUMBNAILS ORIGINALES - MANTENEMOS LOS EXISTENTES -->
             <div class="thumbnail-item active">
                 {!! editableImage('slider_thumb_agricultura', './image/carrusel/agricultura.jpeg', __('messages.slider_agriculture'), 'slider') !!}
             </div>
@@ -138,12 +197,32 @@
             <div class="thumbnail-item">
                 {!! editableImage('slider_thumb_barco', './image/carrusel/barco.jpg', __('messages.slider_barco'), 'slider') !!}
             </div>
+            
+            <!-- THUMBNAILS ADICIONALES DINÁMICOS -->
+            @if($additionalSliders->count() > 0)
+                @foreach($additionalSliders as $slide)
+                    <div class="thumbnail-item" data-thumbnail-index="{{ $loop->index + 5 }}">
+                        <img src="{{ asset($slide->thumbnail_path) }}" alt="{{ $slide->getAltText() }}" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                @endforeach
+            @endif
         </div>
         
         <div class="slider-controls">
             <button id="prevBtn" class="control-btn">&lt;</button>
             <button id="nextBtn" class="control-btn">&gt;</button>
         </div>
+        
+        {{-- Botón para agregar slides adicionales (solo en modo admin) --}}
+        @if(session('admin_authenticated'))
+            <div class="manage-slider-btn" onclick="window.open('{{ route('admin.slider.index') }}', '_blank')" 
+                 style="position: absolute; top: 15px; left: 15px; background: rgba(40, 167, 69, 0.9); 
+                        color: white; padding: 8px 12px; border-radius: 5px; cursor: pointer; 
+                        font-size: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.3); z-index: 10;"
+                 title="Agregar más slides al slider">
+                <i class="fas fa-plus"></i> Agregar Slides
+            </div>
+        @endif
     </div>
 </div>
 @endsection
@@ -415,19 +494,94 @@
 @extends('essencials.footer')
 
 <script>
-// Carrusel automático restaurado
+// Carrusel automático dinámico - MODIFICADO PARA MÚLTIPLES IMÁGENES
 document.addEventListener('DOMContentLoaded', function() {
     const images = document.querySelectorAll('.carousel-image');
     let currentIndex = 0;
+    let carouselInterval;
 
     function showNextImage() {
+        // Ocultar imagen actual
         images[currentIndex].classList.remove('active');
+        if (images[currentIndex].parentElement && images[currentIndex].parentElement.classList.contains('carousel-image-wrapper')) {
+            images[currentIndex].parentElement.classList.remove('active');
+        }
+        
+        // Mover al siguiente índice
         currentIndex = (currentIndex + 1) % images.length;
+        
+        // Mostrar nueva imagen
         images[currentIndex].classList.add('active');
+        if (images[currentIndex].parentElement && images[currentIndex].parentElement.classList.contains('carousel-image-wrapper')) {
+            images[currentIndex].parentElement.classList.add('active');
+        }
     }
 
-    // Cambiar imagen cada 3 segundos
-    setInterval(showNextImage, 3000);
+    function startCarousel() {
+        if (images.length > 1) {
+            carouselInterval = setInterval(showNextImage, 3000);
+        }
+    }
+
+    function stopCarousel() {
+        if (carouselInterval) {
+            clearInterval(carouselInterval);
+        }
+    }
+
+    // Iniciar carrusel
+    startCarousel();
+
+    // Pausar carrusel al pasar el mouse
+    const carouselContainer = document.querySelector('.carousel');
+    if (carouselContainer) {
+        carouselContainer.addEventListener('mouseenter', stopCarousel);
+        carouselContainer.addEventListener('mouseleave', startCarousel);
+    }
+
+    // Función para agregar manualmente controles (opcional)
+    window.nextCarouselImage = function() {
+        stopCarousel();
+        showNextImage();
+        startCarousel();
+    };
+
+    window.prevCarouselImage = function() {
+        stopCarousel();
+        images[currentIndex].classList.remove('active');
+        if (images[currentIndex].parentElement && images[currentIndex].parentElement.classList.contains('carousel-image-wrapper')) {
+            images[currentIndex].parentElement.classList.remove('active');
+        }
+        
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        
+        images[currentIndex].classList.add('active');
+        if (images[currentIndex].parentElement && images[currentIndex].parentElement.classList.contains('carousel-image-wrapper')) {
+            images[currentIndex].parentElement.classList.add('active');
+        }
+        startCarousel();
+    };
+
+    // Función para ir a una imagen específica
+    window.goToCarouselImage = function(index) {
+        if (index >= 0 && index < images.length) {
+            stopCarousel();
+            images[currentIndex].classList.remove('active');
+            if (images[currentIndex].parentElement && images[currentIndex].parentElement.classList.contains('carousel-image-wrapper')) {
+                images[currentIndex].parentElement.classList.remove('active');
+            }
+            
+            currentIndex = index;
+            
+            images[currentIndex].classList.add('active');
+            if (images[currentIndex].parentElement && images[currentIndex].parentElement.classList.contains('carousel-image-wrapper')) {
+                images[currentIndex].parentElement.classList.add('active');
+            }
+            startCarousel();
+        }
+    };
+
+    console.log('Carrusel dinámico cargado con', images.length, 'imágenes');
 });
 
 

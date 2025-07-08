@@ -20,6 +20,13 @@ return new class extends Migration
             $table->string('section')->default('general'); // Sección donde aparece
             $table->string('description')->nullable(); // Descripción para el admin
             $table->boolean('is_active')->default(true); // Si la imagen está activa
+            $table->integer('carousel_order')->nullable(); // Orden en el carrusel (NULL para no-carrusel)
+            $table->integer('slider_order')->nullable(); // Orden en el slider (NULL para no-slider)
+            $table->string('thumbnail_path')->nullable(); // Ruta de la imagen thumbnail para el slider
+            $table->string('title_es')->nullable(); // Título en español para el slider
+            $table->string('title_en')->nullable(); // Título en inglés para el slider
+            $table->text('content_es')->nullable(); // Contenido en español para el slider
+            $table->text('content_en')->nullable(); // Contenido en inglés para el slider
             $table->timestamps();
         });
     }
