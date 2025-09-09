@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>@yield('title', 'Onizzo Admin')</title>
     
     <!-- Bootstrap CSS -->
@@ -164,6 +165,9 @@
                         </a>
                         <a class="nav-link {{ request()->routeIs('admin.images.*') ? 'active' : '' }}" href="{{ route('admin.images.index') }}">
                             <i class="fas fa-images"></i> Imágenes
+                        </a>
+                        <a class="nav-link {{ request()->routeIs('admin.contacts.*') ? 'active' : '' }}" href="{{ route('admin.contacts.index') }}">
+                            <i class="fas fa-address-book"></i> Contactos
                         </a>
                         <a class="nav-link {{ request()->routeIs('admin.carousel.*') ? 'active' : '' }}" href="{{ route('admin.carousel.index') }}">
                             <i class="fas fa-film"></i> Carrusel

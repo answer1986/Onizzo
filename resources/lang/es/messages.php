@@ -10,15 +10,15 @@ return [
     
     // Slider de productos
     'slider_title' => 'Diseño del Slider',
-    'slider_pasas' => 'Pasas',
+    #'slider_pasas' => 'Pasas',
     'slider_pasas_description' => 'Descubre la dulzura natural de nuestras pasas, perfectas para snacks saludables y repostería.',
-    'slider_agro' => 'Agro',
+    #'slider_agro' => 'Agro',
     'slider_agro_description' => 'Innovación y sostenibilidad en cada aspecto de nuestra producción agrícola.',
-    'slider_agriculture' => 'Agricultura',
+    #'slider_agriculture' => 'Agricultura',
     'slider_agriculture_description' => 'Cultivando el futuro con prácticas agrícolas responsables y de alta calidad.',
-    'slider_camion' => 'Transporte',
+    #'slider_camion' => 'Transporte',
     'slider_camion_description' => 'Logística eficiente y responsable para llevar nuestros productos a todo el mundo.',
-    'slider_barco' => 'Exportación',
+    #'slider_barco' => 'Exportación',
     'slider_barco_description' => 'Conectando Chile con los mercados internacionales a través de exportaciones de calidad.',
     
     // Sección Sobre Nosotros

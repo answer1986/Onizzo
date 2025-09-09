@@ -10,15 +10,15 @@ return [
     
     // Product slider
     'slider_title' => 'Slider Design',
-    'slider_pasas' => 'Raisins',
+   # 'slider_pasas' => 'Raisins',
     'slider_pasas_description' => 'Discover the natural sweetness of our raisins, perfect for healthy snacks and baking.',
-    'slider_agro' => 'Agro',
+   # 'slider_agro' => 'Agro',
     'slider_agro_description' => 'Innovation and sustainability in every aspect of our agricultural production.',
-    'slider_agriculture' => 'Agriculture',
+   # 'slider_agriculture' => 'Agriculture',
     'slider_agriculture_description' => 'Cultivating the future with responsible and high-quality agricultural practices.',
-    'slider_camion' => 'Transportation',
+   # 'slider_camion' => 'Transportation',
     'slider_camion_description' => 'Efficient and responsible logistics to bring our products to the world.',
-    'slider_barco' => 'Export',
+   # 'slider_barco' => 'Export',
     'slider_barco_description' => 'Connecting Chile with international markets through quality exports.',
     
     // About us section

@@ -29,7 +29,7 @@ body {
     text-align: center;
   }
   
-  
+
 
 /* Header mejorado */
 .header {
@@ -185,15 +185,15 @@ body {
 }
 
 .slider-content {
-    position: absolute;
-    bottom: 40px;
-    left: 40px;
-    color: white;
-    text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
-    background: rgba(0,0,0,0.3);
-    padding: 20px;
-    border-radius: 12px;
-    backdrop-filter: blur(10px);
+  #  position: absolute;
+  #  bottom: 40px;
+  #  left: 40px;
+  #  color: white;
+  #  text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+  #  background: rgba(0,0,0,0.3);
+  #  padding: 20px;
+  #  border-radius: 12px;
+  #  backdrop-filter: blur(10px);
 }
 
 .slider-content h3 {
@@ -218,14 +218,13 @@ body {
 }
 
 .thumbnail-item {
-    position: relative;
     width: 80px;
     height: 50px;
     cursor: pointer;
     opacity: 0.6;
     transition: all 0.3s ease;
     border-radius: 8px;
-    overflow: visible; /* Cambiar a visible para que se vean los handles */
+    overflow: hidden;
     border: 2px solid transparent;
 }
 
@@ -244,140 +243,6 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
-}
-
-/* Drag & Drop para thumbnails en el frontend */
-.thumbnail-drag-handle {
-    position: absolute;
-    top: -10px;
-    left: -10px;
-    background: #e74c3c;
-    color: white;
-    padding: 10px 12px;
-    border-radius: 8px;
-    cursor: grab;
-    font-size: 16px;
-    font-weight: bold;
-    z-index: 1000;
-    opacity: 1;
-    transition: all 0.3s ease;
-    border: 2px solid #fff;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.3);
-    pointer-events: auto;
-    user-select: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.thumbnail-item:hover .thumbnail-drag-handle {
-    opacity: 1;
-    background: rgba(52, 152, 219, 1);
-    transform: scale(1.1);
-}
-
-.thumbnail-drag-handle:active {
-    cursor: grabbing;
-}
-
-.thumbnail-edit-controls {
-    position: absolute;
-    top: 2px;
-    right: 2px;
-    display: flex;
-    gap: 2px;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    z-index: 15;
-}
-
-.thumbnail-item:hover .thumbnail-edit-controls {
-    opacity: 1;
-}
-
-.btn-thumbnail-edit,
-.btn-thumbnail-delete {
-    background: rgba(0,0,0,0.7);
-    color: white;
-    border: none;
-    padding: 2px 4px;
-    border-radius: 3px;
-    font-size: 10px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-}
-
-.btn-thumbnail-edit:hover {
-    background: rgba(52, 152, 219, 0.9);
-}
-
-.btn-thumbnail-delete:hover {
-    background: rgba(231, 76, 60, 0.9);
-}
-
-.add-new-slide {
-    background: rgba(52, 152, 219, 0.1);
-    border: 2px dashed rgba(52, 152, 219, 0.5);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.add-new-slide:hover {
-    background: rgba(52, 152, 219, 0.2);
-    border-color: rgba(52, 152, 219, 0.8);
-}
-
-.add-slide-content {
-    text-align: center;
-    color: rgba(52, 152, 219, 0.8);
-    font-size: 10px;
-}
-
-.add-slide-content i {
-    display: block;
-    font-size: 16px;
-    margin-bottom: 2px;
-}
-
-/* Sortable effects para thumbnails */
-.thumbnail-item.sortable-ghost {
-    opacity: 0.3;
-    transform: scale(0.95);
-    background: rgba(231, 76, 60, 0.1);
-    border: 2px dashed #e74c3c;
-    border-radius: 8px;
-}
-
-.thumbnail-item.sortable-chosen {
-    transform: scale(1.05);
-    z-index: 1000;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.3);
-}
-
-.thumbnail-item.sortable-fallback {
-    opacity: 0.8;
-    transform: scale(1.05);
-    box-shadow: 0 8px 24px rgba(0,0,0,0.3);
-}
-
-.thumbnail-item.sortable-drag {
-    cursor: grabbing !important;
-}
-
-.thumbnail-item.being-dragged {
-    opacity: 0.8;
-    transform: scale(1.05);
-    box-shadow: 0 8px 24px rgba(0,0,0,0.3);
-    z-index: 1000;
-}
-
-.thumbnail-item.being-dragged .thumbnail-drag-handle {
-    background: #3498db;
-    transform: scale(1.1);
-    box-shadow: 0 6px 20px rgba(0,0,0,0.4);
 }
 
 /* Controles del slider arreglados */
@@ -817,20 +682,16 @@ body {
     height: 60px;
 }
 
-.main-slider .slider-content {
-    display: none !important;
-  }
-  
-
 #cert1{
-    height: 150%;
+    height: 60%;
 }
 
 #cert1 img{
-    height: 150%;
+    height: 60%;
     width: auto;
     object-fit: contain;
 }
+
 
 
 #contacto-title{

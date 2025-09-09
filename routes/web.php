@@ -5,6 +5,7 @@ use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\ContentController;
 use App\Http\Controllers\Admin\ImageController;
+use App\Http\Controllers\Admin\ContactController;
 
 Route::get('/', function () {
     return view('index');
@@ -47,18 +48,28 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::resource('images', ImageController::class);
     Route::post('images/import', [ImageController::class, 'importExisting'])->name('images.import');
     
+    // Rutas de contactos
+    Route::get('contacts', [ContactController::class, 'index'])->name('contacts.index');
+    Route::post('contacts/import', [ContactController::class, 'importExisting'])->name('contacts.import');
+    Route::post('footer/import', [ContactController::class, 'importFooter'])->name('footer.import');
+    
     // Rutas del carrusel
     Route::get('carousel', [App\Http\Controllers\Admin\CarouselController::class, 'index'])->name('carousel.index');
+    Route::get('carousel/get/{id}', [App\Http\Controllers\Admin\CarouselController::class, 'show'])->name('carousel.get');
     Route::post('carousel/store', [App\Http\Controllers\Admin\CarouselController::class, 'store'])->name('carousel.store');
+    Route::post('carousel/update/{id}', [App\Http\Controllers\Admin\CarouselController::class, 'update'])->name('carousel.update');
     Route::post('carousel/destroy', [App\Http\Controllers\Admin\CarouselController::class, 'destroy'])->name('carousel.destroy');
     Route::post('carousel/reorder', [App\Http\Controllers\Admin\CarouselController::class, 'reorder'])->name('carousel.reorder');
+    Route::post('carousel/update-order', [App\Http\Controllers\Admin\CarouselController::class, 'updateCarouselOrder'])->name('carousel.update-order');
     
     // Rutas del slider
     Route::get('slider', [App\Http\Controllers\Admin\SliderController::class, 'index'])->name('slider.index');
+    Route::get('slider/get/{id}', [App\Http\Controllers\Admin\SliderController::class, 'show'])->name('slider.get');
     Route::post('slider/store', [App\Http\Controllers\Admin\SliderController::class, 'store'])->name('slider.store');
     Route::post('slider/update/{id}', [App\Http\Controllers\Admin\SliderController::class, 'update'])->name('slider.update');
     Route::post('slider/destroy', [App\Http\Controllers\Admin\SliderController::class, 'destroy'])->name('slider.destroy');
     Route::post('slider/reorder', [App\Http\Controllers\Admin\SliderController::class, 'reorder'])->name('slider.reorder');
+    Route::post('slider/update-order', [App\Http\Controllers\Admin\SliderController::class, 'updateSliderOrder'])->name('slider.update-order');
 });
 
 // Ruta de depuración

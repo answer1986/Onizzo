@@ -39,20 +39,20 @@
         <div class="col-md-6 col-lg-3 mb-3">
             <div class="stats-card">
                 <div class="stats-icon text-warning">
-                    <i class="fas fa-globe"></i>
+                    <i class="fas fa-address-book"></i>
                 </div>
-                <h3 class="text-warning">2</h3>
-                <p class="text-muted mb-0">Idiomas</p>
+                <h3 class="text-warning">{{ $totalContacts ?? 0 }}</h3>
+                <p class="text-muted mb-0">Contactos</p>
             </div>
         </div>
         
         <div class="col-md-6 col-lg-3 mb-3">
             <div class="stats-card">
                 <div class="stats-icon text-info">
-                    <i class="fas fa-cog"></i>
+                    <i class="fas fa-layer-group"></i>
                 </div>
-                <h3 class="text-info">100%</h3>
-                <p class="text-muted mb-0">Sistema</p>
+                <h3 class="text-info">{{ $totalFooter ?? 0 }}</h3>
+                <p class="text-muted mb-0">Footer</p>
             </div>
         </div>
     </div>
@@ -142,8 +142,14 @@
                     <a href="{{ route('admin.contents.index') }}" class="btn btn-outline-info btn-sm w-100 mb-2">
                         <i class="fas fa-file-text me-2"></i>Gestionar Contenidos
                     </a>
-                    <a href="{{ route('admin.images.index') }}" class="btn btn-outline-success btn-sm w-100">
+                    <a href="{{ route('admin.images.index') }}" class="btn btn-outline-success btn-sm w-100 mb-2">
                         <i class="fas fa-images me-2"></i>Gestionar Imágenes
+                    </a>
+                    <a href="{{ route('admin.contacts.index') }}" class="btn btn-outline-warning btn-sm w-100 mb-2">
+                        <i class="fas fa-address-book me-2"></i>Gestionar Contactos
+                    </a>
+                    <a href="{{ route('admin.contents.index') }}?section=footer" class="btn btn-outline-info btn-sm w-100">
+                        <i class="fas fa-layer-group me-2"></i>Gestionar Footer
                     </a>
                 </div>
             </div>

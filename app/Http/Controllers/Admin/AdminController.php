@@ -51,8 +51,10 @@ class AdminController extends Controller
     {
         $totalContents = Content::count();
         $totalImages = Image::count();
+        $totalContacts = Content::where('section', 'contacto')->count();
+        $totalFooter = Content::where('section', 'footer')->count() + Image::where('section', 'footer')->count();
         
-        return view('admin.dashboard', compact('totalContents', 'totalImages'));
+        return view('admin.dashboard', compact('totalContents', 'totalImages', 'totalContacts', 'totalFooter'));
     }
 
     public function logout()

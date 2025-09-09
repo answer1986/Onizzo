@@ -18,6 +18,20 @@
 
 <!-- PLANO 1: Cabecera + Nuestros Productos + Sobre Nosotros -->
 @section('video')
+@if(session('admin_authenticated'))
+<!-- Banner de modo de edición visual -->
+<div id="visual-edit-banner" style="position: fixed; top: 0; left: 0; right: 0; background: linear-gradient(90deg, #e74c3c, #c0392b); color: white; padding: 8px 20px; z-index: 10000; text-align: center; font-weight: bold; box-shadow: 0 2px 10px rgba(0,0,0,0.3);">
+    <i class="fas fa-edit"></i> MODO EDICIÓN VISUAL ACTIVO
+    <a href="{{ route('admin.slider.index') }}" target="_blank" class="btn btn-light btn-sm ms-3">
+        <i class="fas fa-sliders-h me-1"></i>Gestionar Slider
+    </a>
+    <button onclick="toggleEditMode()" style="background: rgba(255,255,255,0.2); border: none; color: white; padding: 4px 8px; border-radius: 4px; margin-left: 15px; cursor: pointer;">
+        <i class="fas fa-eye-slash"></i> Ocultar
+    </button>
+</div>
+<div style="height: 50px;"></div> <!-- Espaciador para el banner -->
+@endif
+
 <div class="plano-1">
     <div class="container" id="productos-seccion1">
         <div class="header">
@@ -26,28 +40,28 @@
         <div class="content-wrapper">
             <div class="image-container">
                 <div class="image">
-                    {!! editableImage('product_ciruelas', './image/productos/ciruelas.png', 'ciruelas', 'productos') !!}
+                    {!! editableImage('product_ciruelas', './image/productos/ciruelas.webp', 'ciruelas', 'productos') !!}
                     <div class="text-overlay">
                         <h3>{!! editableContent('dried_plums', 'productos', __('messages.dried_plums'), 'text') !!}</h3>
                         <p>{!! editableContent('dried_plums_desc', 'productos', __('messages.dried_plums_desc'), 'textarea') !!}</p>
                     </div>
                 </div>
                 <div class="image">
-                    {!! editableImage('product_ajos', './image/productos/ajos.png', 'ajos', 'productos') !!}
+                    {!! editableImage('product_ajos', './image/productos/ajos.webp', 'ajos', 'productos') !!}
                     <div class="text-overlay">
                         <h3>{!! editableContent('fresh_garlic', 'productos', __('messages.fresh_garlic'), 'text') !!}</h3>
                         <p>{!! editableContent('fresh_garlic_desc', 'productos', __('messages.fresh_garlic_desc'), 'text') !!}</p>
                     </div>
                 </div>
                 <div class="image">
-                    {!! editableImage('product_guinda', './image/productos/guinda.png', 'guindas', 'productos') !!}
+                    {!! editableImage('product_guinda', './image/productos/guinda.webp', 'guindas', 'productos') !!}
                     <div class="text-overlay">
                         <h3>{!! editableContent('fresh_cherries', 'productos', __('messages.fresh_cherries'), 'text') !!}</h3>
                         <p>{!! editableContent('fresh_cherries_desc', 'productos', __('messages.fresh_cherries_desc'), 'text') !!}</p>
                     </div>
                 </div>
                 <div class="image">
-                    {!! editableImage('product_nueces', './image/productos/nueces.png', 'nueces', 'productos') !!}
+                    {!! editableImage('product_nueces', './image/productos/nueces.webp', 'nueces', 'productos') !!}
                     <div class="text-overlay">
                         <h3>{!! editableContent('walnuts', 'productos', __('messages.walnuts'), 'text') !!}</h3>
                         <p>{!! editableContent('walnuts_desc', 'productos', __('messages.walnuts_desc'), 'text') !!}</p>
@@ -69,26 +83,24 @@
                 @php $carouselImages = getCarouselImages(); @endphp
                 @if($carouselImages->count() > 0)
                     @foreach($carouselImages as $index => $image)
-                        @if(session('admin_authenticated'))
-                            <div class="editable-image-container carousel-image-wrapper {{ $index == 0 ? 'active' : '' }}" data-index="{{ $index }}">
-                                <img src="{{ asset($image->path) }}" alt="{{ $image->getAltText() }}" class="carousel-image {{ $index == 0 ? 'active' : '' }}" id="carousel-img-{{ $image->id }}">
-                                <i class="fas fa-edit edit-icon" 
-                                   style="position: absolute; top: 5px; right: 5px; color: #007bff; cursor: pointer; 
-                                          background: rgba(255,255,255,0.9); padding: 4px; border-radius: 3px; font-size: 14px;
-                                          box-shadow: 0 2px 4px rgba(0,0,0,0.2);"
-                                   title="Cambiar esta imagen"
-                                   onclick="editImage('{{ $image->key }}', 'nosotros')"></i>
-                            </div>
-                        @else
-                            <img src="{{ asset($image->path) }}" alt="{{ $image->getAltText() }}" class="carousel-image {{ $index == 0 ? 'active' : '' }}" data-index="{{ $index }}">
-                        @endif
+                        <div class="carousel-image-wrapper {{ $index == 0 ? 'active' : '' }}" data-index="{{ $index }}">
+                            {!! editableImage('carousel_img_' . $image->id, '/' . $image->path, $image->getAltText(), 'nosotros', 'carousel-image ' . ($index == 0 ? 'active' : '')) !!}
+                        </div>
                     @endforeach
                 @else
                     {{-- Imágenes por defecto si no hay imágenes del carrusel --}}
-                    <img src="{{ asset('./image/frutas secas.jpeg') }}" alt="Frutas Secas" class="carousel-image active" data-index="0">
-                    <img src="{{ asset('./image/pasas.jpeg') }}" alt="Pasas" class="carousel-image" data-index="1">
-                    <img src="{{ asset('./image/ciruela.png') }}" alt="Ciruelas" class="carousel-image" data-index="2">
-                    <img src="{{ asset('./image/Jefe.jpeg') }}" alt="Jefe" class="carousel-image" data-index="3">
+                    <div class="carousel-image-wrapper active" data-index="0">
+                        {!! editableImage('carousel_default_1', 'public/image/frutas secas.jpeg', 'Frutas Secas', 'nosotros', 'carousel-image active') !!}
+                    </div>
+                    <div class="carousel-image-wrapper" data-index="1">
+                        {!! editableImage('carousel_default_2', 'public/image/pasas.jpeg', 'Pasas', 'nosotros', 'carousel-image') !!}
+                    </div>
+                    <div class="carousel-image-wrapper" data-index="2">
+                        {!! editableImage('carousel_default_3', 'public/image/ciruela.png', 'Ciruelas', 'nosotros', 'carousel-image') !!}
+                    </div>
+                    <div class="carousel-image-wrapper" data-index="3">
+                        {!! editableImage('carousel_default_4', 'public/image/Jefe.jpeg', 'Jefe', 'nosotros', 'carousel-image') !!}
+                    </div>
                 @endif
                 
                 {{-- Botón para agregar más imágenes (solo en modo admin) --}}
@@ -115,97 +127,34 @@
 <div class="plano-2">
     <div class="slider-container">
         <div class="main-slider">
-            <!-- SLIDES ORIGINALES - MANTENEMOS LO QUE FUNCIONABA -->
-            <div class="slider-item active">
-                {!! editableImage('slider_img_pasas', './image/carrusel/pasas-1.jpeg', __('messages.slider_pasas'), 'slider') !!}
-                <div class="slider-content">
-                    <h3>{!! editableContent('slider_pasas', 'slider', __('messages.slider_pasas'), 'text') !!}</h3>
-                    <p>{!! editableContent('slider_pasas_description', 'slider', __('messages.slider_pasas_description'), 'textarea') !!}</p>
-                </div>
-            </div>
-            <div class="slider-item">
-                {!! editableImage('slider_img_agro', './image/carrusel/agro.png', __('messages.slider_agro'), 'slider') !!}
-                <div class="slider-content">
-                    <h3>{!! editableContent('slider_agro', 'slider', __('messages.slider_agro'), 'text') !!}</h3>
-                    <p>{!! editableContent('slider_agro_description', 'slider', __('messages.slider_agro_description'), 'textarea') !!}</p>
-                </div>
-            </div>
-            <div class="slider-item">
-                {!! editableImage('slider_img_agricultura', './image/carrusel/agricultura.jpeg', __('messages.slider_agriculture'), 'slider') !!}
-                <div class="slider-content">
-                    <h3>{!! editableContent('slider_agriculture', 'slider', __('messages.slider_agriculture'), 'text') !!}</h3>
-                    <p>{!! editableContent('slider_agriculture_description', 'slider', __('messages.slider_agriculture_description'), 'textarea') !!}</p>
-                </div>
-            </div>
-            <div class="slider-item">
-                {!! editableImage('slider_img_camion', './image/carrusel/trucks.jpg', __('messages.slider_camion'), 'slider') !!}
-                <div class="slider-content">
-                    <h3>{!! editableContent('slider_camion', 'slider', __('messages.slider_camion'), 'text') !!}</h3>
-                    <p>{!! editableContent('slider_camion_description', 'slider', __('messages.slider_camion_description'), 'textarea') !!}</p>
-                </div>
-            </div>
-            <div class="slider-item">
-                {!! editableImage('slider_img_barco', './image/carrusel/barco2.jpg', __('messages.slider_barco'), 'slider') !!}
-                <div class="slider-content">
-                    <h3>{!! editableContent('slider_barco', 'slider', __('messages.slider_barco'), 'text') !!}</h3>
-                    <p>{!! editableContent('slider_barco_description', 'slider', __('messages.slider_barco_description'), 'textarea') !!}</p>
-                </div>
-            </div>
-            
-            <!-- SLIDES ADICIONALES DINÁMICOS - AGREGAMOS MÁS -->
-            @php $additionalSliders = getSliderImages(); @endphp
-            @if($additionalSliders->count() > 0)
-                @foreach($additionalSliders as $slide)
-                    <div class="slider-item" data-slide-id="{{ $slide->id }}">
-                        @if(session('admin_authenticated'))
-                            <div class="editable-image-container" style="position: relative; width: 100%; height: 100%;">
-                                <img src="{{ asset($slide->path) }}" alt="{{ $slide->getAltText() }}" style="width: 100%; height: 100%; object-fit: cover;">
-                                <i class="fas fa-edit edit-icon" 
-                                   style="position: absolute; top: 15px; right: 15px; color: #007bff; cursor: pointer; 
-                                          background: rgba(255,255,255,0.9); padding: 8px; border-radius: 5px; font-size: 16px;
-                                          box-shadow: 0 2px 8px rgba(0,0,0,0.3); z-index: 5;"
-                                   title="Editar este slide adicional"
-                                   onclick="window.open('{{ route('admin.slider.index') }}', '_blank')"></i>
-                            </div>
-                        @else
-                            <img src="{{ asset($slide->path) }}" alt="{{ $slide->getAltText() }}" style="width: 100%; height: 100%; object-fit: cover;">
-                        @endif
-                        
-                        <div class="slider-content">
-                            <h3>{{ $slide->getTitle() }}</h3>
-                            <p>{{ $slide->getContent() }}</p>
+            <!-- Slides del slider -->
+            @php $sliderImages = getSliderImages(); @endphp
+            @if($sliderImages->count() > 0)
+                @foreach($sliderImages as $index => $slide)
+                    <div class="slider-item {{ $index === 0 ? 'active' : '' }}" data-slide-id="{{ $slide->id }}">
+                        {!! editableImage('slider_img_' . $slide->id, $slide->path, $slide->getAltText(), 'slider', '', 'width: 100%; height: 100%; object-fit: cover;') !!}
+                        <div class="slider-content" style="display: block !important; position: absolute; bottom: 40px; left: 40px; color: white; text-shadow: 2px 2px 8px rgba(0,0,0,0.7); background: rgba(0,0,0,0.3); padding: 20px; border-radius: 12px; backdrop-filter: blur(10px);">
+                            <h3 style="font-size: 1.8rem; margin-bottom: 0.5rem; font-weight: 600;">{{ $slide->getTitle() }}</h3>
+                            <p style="font-size: 1rem; opacity: 0.9;">{{ $slide->getContent() }}</p>
                         </div>
                     </div>
                 @endforeach
             @endif
+            
+            <!-- Los slides se manejan desde /admin/slider -->
         </div>
         
-        <div class="thumbnail-slider">
-            <!-- THUMBNAILS ORIGINALES - MANTENEMOS LOS EXISTENTES -->
-            <div class="thumbnail-item active">
-                {!! editableImage('slider_thumb_agricultura', './image/carrusel/agricultura.jpeg', __('messages.slider_agriculture'), 'slider') !!}
-            </div>
-            <div class="thumbnail-item">
-                {!! editableImage('slider_thumb_agro', './image/carrusel/agro.png', __('messages.slider_agro'), 'slider') !!}
-            </div>
-            <div class="thumbnail-item">
-                {!! editableImage('slider_thumb_pasas', './image/carrusel/pasas-1.jpeg', __('messages.slider_pasas'), 'slider') !!}
-            </div>
-            <div class="thumbnail-item">
-                {!! editableImage('slider_thumb_camion', './image/carrusel/camion.jpg', __('messages.slider_camion'), 'slider') !!}
-            </div>
-            <div class="thumbnail-item">
-                {!! editableImage('slider_thumb_barco', './image/carrusel/barco.jpg', __('messages.slider_barco'), 'slider') !!}
-            </div>
-            
-            <!-- THUMBNAILS ADICIONALES DINÁMICOS -->
-            @if($additionalSliders->count() > 0)
-                @foreach($additionalSliders as $slide)
-                    <div class="thumbnail-item" data-thumbnail-index="{{ $loop->index + 5 }}">
-                        <img src="{{ asset($slide->thumbnail_path) }}" alt="{{ $slide->getAltText() }}" style="width: 100%; height: 100%; object-fit: cover;">
+        <div class="thumbnail-slider" id="thumbnailSlider">
+            <!-- Thumbnails del slider -->
+            @if($sliderImages->count() > 0)
+                @foreach($sliderImages as $index => $slide)
+                    <div class="thumbnail-item {{ $index === 0 ? 'active' : '' }}" data-slide-index="{{ $index }}" data-slide-id="{{ $slide->id }}">
+                        {!! editableImage('slider_thumb_' . $slide->id, $slide->thumbnail_path ?: $slide->path, $slide->getAltText(), 'slider', '', 'width: 100%; height: 100%; object-fit: cover;') !!}
                     </div>
                 @endforeach
             @endif
+            
+            <!-- Los thumbnails se manejan desde /admin/slider -->
         </div>
         
         <div class="slider-controls">
@@ -396,11 +345,11 @@
                     <div class="contact-info">
                         <i class="fas fa-envelope contact-icon"></i>
                         <div class="contact-text">
-                            <strong>Agustín Marín Cobo:</strong>
-                            <span>agustin@onizzo.com</span>
+                            <strong>{!! editableContent('contact_agustin_name', 'contacto', 'Agustín Marín Cobo') !!}:</strong>
+                            <span>{!! editableContent('contact_agustin_email', 'contacto', 'agustin@onizzo.com') !!}</span>
                         </div>
                     </div>
-                    <a href="mailto:agustin@onizzo.com" class="contact-action">
+                    <a href="mailto:{!! strip_tags(editableContent('contact_agustin_email', 'contacto', 'agustin@onizzo.com')) !!}" class="contact-action">
                         <i class="fas fa-paper-plane"></i>
                         {{ __('messages.send_email') }}
                     </a>
@@ -410,11 +359,11 @@
                     <div class="contact-info">
                         <i class="fas fa-envelope contact-icon"></i>
                         <div class="contact-text">
-                            <strong>Claudia Marangunic:</strong>
-                            <span>cmarangunic@onizzo.com</span>
+                            <strong>{!! editableContent('contact_claudia_name', 'contacto', 'Claudia Marangunic') !!}:</strong>
+                            <span>{!! editableContent('contact_claudia_email', 'contacto', 'cmarangunic@onizzo.com') !!}</span>
                         </div>
                     </div>
-                    <a href="mailto:cmarangunic@onizzo.com" class="contact-action">
+                    <a href="mailto:{!! strip_tags(editableContent('contact_claudia_email', 'contacto', 'cmarangunic@onizzo.com')) !!}" class="contact-action">
                         <i class="fas fa-paper-plane"></i>
                         {{ __('messages.send_email') }}
                     </a>
@@ -425,10 +374,10 @@
                         <i class="fas fa-envelope contact-icon"></i>
                         <div class="contact-text">
                             <strong>{{ __('messages.general_info') }}:</strong>
-                            <span>info@onizzo.com</span>
+                            <span>{!! editableContent('contact_info_email', 'contacto', 'info@onizzo.com') !!}</span>
                         </div>
                     </div>
-                    <a href="mailto:info@onizzo.com" class="contact-action">
+                    <a href="mailto:{!! strip_tags(editableContent('contact_info_email', 'contacto', 'info@onizzo.com')) !!}" class="contact-action">
                         <i class="fas fa-paper-plane"></i>
                         {{ __('messages.send_email') }}
                     </a>
@@ -439,10 +388,10 @@
                         <i class="fas fa-phone contact-icon"></i>
                         <div class="contact-text">
                             <strong>{{ __('messages.phone') }}:</strong>
-                            <span>+56 2 2927 0470</span>
+                            <span>{!! editableContent('contact_phone', 'contacto', '+56 2 2927 0470') !!}</span>
                         </div>
                     </div>
-                    <a href="tel:+56229270470" class="contact-action">
+                    <a href="tel:{!! str_replace([' ', '-', '(', ')', '+'], '', strip_tags(editableContent('contact_phone', 'contacto', '+56 2 2927 0470'))) !!}" class="contact-action">
                         <i class="fas fa-phone-alt"></i>
                         {{ __('messages.call_us') }}
                     </a>
@@ -619,3 +568,23 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     });
 </script>
+
+@push('scripts')
+@if(session('admin_authenticated'))
+<script>
+// Función para ocultar/mostrar el banner de edición
+function toggleEditMode() {
+    const banner = document.getElementById('visual-edit-banner');
+    const spacer = banner.nextElementSibling;
+    
+    if (banner.style.display === 'none') {
+        banner.style.display = 'block';
+        spacer.style.display = 'block';
+    } else {
+        banner.style.display = 'none';
+        spacer.style.display = 'none';
+    }
+}
+</script>
+@endif
+@endpush

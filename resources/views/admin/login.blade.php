@@ -161,13 +161,7 @@
             </a>
         </div>
 
-        <div class="text-center mt-4">
-            <small class="text-muted">
-                <strong>Credenciales de prueba:</strong><br>
-                Email: admin@onizzo.com<br>
-                Contraseña: admin123
-            </small>
-        </div>
+        
     </div>
 
     <!-- Bootstrap JS -->
